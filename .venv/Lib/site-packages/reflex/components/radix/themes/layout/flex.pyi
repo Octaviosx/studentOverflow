@@ -8,10 +8,9 @@ from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralFlexDirection = Literal["row", "column", "row-reverse", "column-reverse"]
 LiteralFlexWrap = Literal["nowrap", "wrap", "wrap-reverse"]
@@ -311,6 +310,5 @@ class Flex(elements.Div, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 flex = Flex.create

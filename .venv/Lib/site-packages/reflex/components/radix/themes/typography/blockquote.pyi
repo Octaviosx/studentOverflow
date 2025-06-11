@@ -8,10 +8,9 @@ from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 class Blockquote(elements.Blockquote, RadixThemesComponent):
     @overload
@@ -340,6 +339,5 @@ class Blockquote(elements.Blockquote, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 blockquote = Blockquote.create

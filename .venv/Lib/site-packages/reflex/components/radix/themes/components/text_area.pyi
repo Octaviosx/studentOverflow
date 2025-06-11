@@ -8,10 +8,9 @@ from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType, KeyInputInfo
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralTextAreaSize = Literal["1", "2", "3"]
 LiteralTextAreaResize = Literal["none", "vertical", "horizontal", "both"]
@@ -114,7 +113,7 @@ class TextArea(RadixThemesComponent, elements.Textarea):
         value: Var[str] | str | None = None,
         wrap: Var[str] | str | None = None,
         auto_height: Var[bool] | bool | None = None,
-        cols: Var[int] | int | None = None,
+        cols: Var[int | str] | int | str | None = None,
         enter_key_submit: Var[bool] | bool | None = None,
         access_key: Var[str] | str | None = None,
         auto_capitalize: Literal[
@@ -385,7 +384,6 @@ class TextArea(RadixThemesComponent, elements.Textarea):
         Returns:
             The component.
         """
-        ...
 
     def add_style(self): ...
 

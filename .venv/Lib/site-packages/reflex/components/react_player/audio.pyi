@@ -13,8 +13,6 @@ from reflex.event import EventType
 from reflex.vars.base import Var
 
 class Audio(ReactPlayer):
-    pass
-
     @overload
     @classmethod
     def create(  # type: ignore
@@ -110,4 +108,3 @@ class Audio(ReactPlayer):
         Returns:
             The component.
         """
-        ...

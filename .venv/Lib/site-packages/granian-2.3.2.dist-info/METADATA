@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: granian
-Version: 2.3.1
+Version: 2.3.2
 Classifier: Development Status :: 5 - Production/Stable
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved :: BSD License
@@ -42,9 +42,17 @@ Project-URL: Homepage, https://github.com/emmett-framework/granian
 Project-URL: Funding, https://github.com/sponsors/gi0baro
 Project-URL: Source, https://github.com/emmett-framework/granian
 
-# Granian
+<p align="center">
+  <img width="550" src="https://emmett.sh/static/img/granian-logo-xb-fw.png" alt="granian">
+</p>
 
-A Rust HTTP server for Python applications built on top of the [Hyper crate](https://github.com/hyperium/hyper).
+<p align="center">
+<em>The Rust HTTP server for Python</em>
+</p>
+
+---
+
+Granian is a Rust HTTP server for Python applications built on top of [Hyper](https://github.com/hyperium/hyper) and [Tokio](https://github.com/tokio-rs/tokio).
 
 ## Rationale
 

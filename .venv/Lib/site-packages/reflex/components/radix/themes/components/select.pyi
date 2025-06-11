@@ -8,10 +8,9 @@ from typing import Any, Literal, overload
 
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 class SelectRoot(RadixThemesComponent):
     @overload
@@ -89,7 +88,6 @@ class SelectRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class SelectTrigger(RadixThemesComponent):
     @overload
@@ -214,7 +212,6 @@ class SelectTrigger(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class SelectContent(RadixThemesComponent):
     @overload
@@ -355,7 +352,6 @@ class SelectContent(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class SelectGroup(RadixThemesComponent):
     @overload
@@ -410,7 +406,6 @@ class SelectGroup(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class SelectItem(RadixThemesComponent):
     @overload
@@ -469,7 +464,6 @@ class SelectItem(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class SelectLabel(RadixThemesComponent):
     @overload
@@ -524,7 +518,6 @@ class SelectLabel(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class SelectSeparator(RadixThemesComponent):
     @overload
@@ -579,7 +572,6 @@ class SelectSeparator(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class HighLevelSelect(SelectRoot):
     @overload
@@ -736,7 +728,6 @@ class HighLevelSelect(SelectRoot):
         Returns:
             The select component.
         """
-        ...
 
 class Select(ComponentNamespace):
     root = staticmethod(SelectRoot.create)
@@ -899,6 +890,5 @@ class Select(ComponentNamespace):
         Returns:
             The select component.
         """
-        ...
 
 select = Select()

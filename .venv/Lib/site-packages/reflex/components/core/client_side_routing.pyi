@@ -65,7 +65,6 @@ class ClientSideRouting(Component):
         Returns:
             The component.
         """
-        ...
 
 def wait_for_client_redirect(component: Component) -> Component: ...
 
@@ -120,4 +119,3 @@ class Default404Page(Component):
         Returns:
             The component.
         """
-        ...

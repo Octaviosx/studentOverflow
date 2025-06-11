@@ -63,7 +63,6 @@ class ColorModeIcon(Cond):
         Returns:
             The conditionally rendered component
         """
-        ...
 
 LiteralPosition = Literal["top-left", "top-right", "bottom-left", "bottom-right"]
 position_values: list[str]
@@ -424,7 +423,6 @@ class ColorModeIconButton(IconButton):
         Returns:
             The button component.
         """
-        ...
 
 class ColorModeSwitch(Switch):
     @overload
@@ -567,7 +565,6 @@ class ColorModeSwitch(Switch):
         Returns:
             The switch component.
         """
-        ...
 
 class ColorModeNamespace(Var):
     icon = staticmethod(ColorModeIcon.create)

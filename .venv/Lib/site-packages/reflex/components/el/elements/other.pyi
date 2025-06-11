@@ -258,7 +258,6 @@ class Details(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Dialog(BaseHTML):
     @overload
@@ -506,7 +505,6 @@ class Dialog(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Summary(BaseHTML):
     @overload
@@ -752,7 +750,6 @@ class Summary(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Slot(BaseHTML):
     @overload
@@ -998,7 +995,6 @@ class Slot(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Template(BaseHTML):
     @overload
@@ -1244,7 +1240,6 @@ class Template(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Math(BaseHTML):
     @overload
@@ -1490,7 +1485,6 @@ class Math(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Html(BaseHTML):
     @overload
@@ -1738,7 +1732,6 @@ class Html(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 details = Details.create
 dialog = Dialog.create

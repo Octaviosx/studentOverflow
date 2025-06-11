@@ -4,6 +4,7 @@ import reflex as rx
 from rxconfig import config
 from .pages.login import login, EstadoLogin
 from .pages.signup import registro
+from .pages.publicacion import publicacion
 from .UI.navbar import navbar_searchbar, navbar_search_user
 from .UI.footer import footer
 
@@ -13,10 +14,6 @@ class State(rx.State):
 async def getNavbar():
     estadoSesion = await rx.get_state(EstadoLogin)
     print(estadoSesion)
-    """if EstadoLogin.id_usuario is None:
-        navbar_search_user()
-    else:
-        navbar_searchbar()"""
 #selecciona el navbar según si se ha iniciado sesión    
 def index() -> rx.Component:
     def navbar_condicional():
@@ -44,15 +41,15 @@ def index() -> rx.Component:
             rx.separator(),
             rx.text(rx.text.strong("Podrás encontrar soluciónes para cualquier:"), size="6"),
             rx.vstack(
-                rx.text('Lenguaje', size='4'),
+                rx.text('Lenguaje, framework...', size='4'),
                 rx.grid(
                     rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
+                    rx.card(rx.image(src=rx.asset("angular_logo.png")), width="100%"),
+                    rx.card(rx.image(src=rx.asset("Csharp_Logo.png")), width="100%"),
+                    rx.card(rx.image(src=rx.asset("python-logo.png")), width="100%"),
+                    rx.card(rx.image(src=rx.asset("flutter.png")), width="100%"),
+                    rx.card(rx.image(src=rx.asset("javascript-logo.png")), width="100%"),
+                    rx.card(rx.image(src=rx.asset("sql-logo.png")), width="100%"),
                 columns="7",
                 spacing="4",
                 width="100%",
@@ -68,22 +65,6 @@ def index() -> rx.Component:
                     rx.card(rx.image(src=rx.asset("alibaba-logo.png")), width="100%"),
                 columns="4",
                 spacing="9",
-                width="100%",
-                ),
-                align='center'
-            ),
-            rx.vstack(
-                rx.text('Materia o error en especifo.', size='4'),
-                rx.grid(
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                    rx.card(rx.image(src=rx.asset("Java-logo.png")), width="100%"),
-                columns="7",
-                spacing="4",
                 width="100%",
                 ),
                 align='center'
@@ -110,3 +91,4 @@ app = rx.App(style=style)
 app.add_page(index)
 app.add_page(login)
 app.add_page(registro)
+app.add_page(publicacion)

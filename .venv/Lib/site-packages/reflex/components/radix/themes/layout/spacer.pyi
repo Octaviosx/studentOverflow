@@ -308,6 +308,5 @@ class Spacer(Flex):
         Returns:
             A new component instance.
         """
-        ...
 
 spacer = Spacer.create

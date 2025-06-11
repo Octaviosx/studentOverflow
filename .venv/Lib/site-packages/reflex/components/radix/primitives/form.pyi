@@ -66,7 +66,6 @@ class FormComponent(RadixPrimitiveComponentWithClassName):
         Returns:
             The component.
         """
-        ...
 
 class FormRoot(FormComponent, HTMLForm):
     def add_style(self) -> dict[str, Any] | None: ...
@@ -341,7 +340,6 @@ class FormRoot(FormComponent, HTMLForm):
         Returns:
             The form component.
         """
-        ...
 
 class FormField(FormComponent):
     def add_style(self) -> dict[str, Any] | None: ...
@@ -400,7 +398,6 @@ class FormField(FormComponent):
         Returns:
             The component.
         """
-        ...
 
 class FormLabel(FormComponent):
     def add_style(self) -> dict[str, Any] | None: ...
@@ -455,7 +452,6 @@ class FormLabel(FormComponent):
         Returns:
             The component.
         """
-        ...
 
 class FormControl(FormComponent):
     @overload
@@ -513,7 +509,6 @@ class FormControl(FormComponent):
         Returns:
             The form control component.
         """
-        ...
 
 LiteralMatcher = Literal[
     "badInput",
@@ -613,7 +608,6 @@ class FormMessage(FormComponent):
         Returns:
             The component.
         """
-        ...
 
 class FormValidityState(FormComponent):
     @overload
@@ -667,7 +661,6 @@ class FormValidityState(FormComponent):
         Returns:
             The component.
         """
-        ...
 
 class FormSubmit(FormComponent):
     @overload
@@ -721,11 +714,8 @@ class FormSubmit(FormComponent):
         Returns:
             The component.
         """
-        ...
 
 class Form(FormRoot):
-    pass
-
     @overload
     @classmethod
     def create(  # type: ignore
@@ -997,7 +987,6 @@ class Form(FormRoot):
         Returns:
             The form component.
         """
-        ...
 
 class FormNamespace(ComponentNamespace):
     root = staticmethod(FormRoot.create)
@@ -1277,6 +1266,5 @@ class FormNamespace(ComponentNamespace):
         Returns:
             The form component.
         """
-        ...
 
 form = FormNamespace()

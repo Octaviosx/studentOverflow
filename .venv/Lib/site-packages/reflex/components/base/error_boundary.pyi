@@ -70,6 +70,5 @@ class ErrorBoundary(Component):
         Returns:
             The ErrorBoundary component.
         """
-        ...
 
 error_boundary = ErrorBoundary.create

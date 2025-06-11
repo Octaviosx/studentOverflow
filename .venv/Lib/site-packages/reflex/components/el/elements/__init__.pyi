@@ -93,6 +93,7 @@ from .media import Circle as Circle
 from .media import Defs as Defs
 from .media import Ellipse as Ellipse
 from .media import Embed as Embed
+from .media import G as G
 from .media import Iframe as Iframe
 from .media import Img as Img
 from .media import Line as Line
@@ -117,6 +118,7 @@ from .media import circle as circle
 from .media import defs as defs
 from .media import ellipse as ellipse
 from .media import embed as embed
+from .media import g as g
 from .media import iframe as iframe
 from .media import image as image
 from .media import img as img
@@ -312,6 +314,7 @@ _MAPPING = {
         "text",
         "line",
         "circle",
+        "g",
         "ellipse",
         "rect",
         "polygon",

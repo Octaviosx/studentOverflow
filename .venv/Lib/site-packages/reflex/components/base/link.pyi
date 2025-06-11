@@ -259,7 +259,6 @@ class RawLink(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class ScriptTag(BaseHTML):
     @overload
@@ -519,4 +518,3 @@ class ScriptTag(BaseHTML):
         Returns:
             The component.
         """
-        ...

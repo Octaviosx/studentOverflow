@@ -256,7 +256,6 @@ class Caption(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Col(BaseHTML):
     @overload
@@ -504,7 +503,6 @@ class Col(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Colgroup(BaseHTML):
     @overload
@@ -752,7 +750,6 @@ class Colgroup(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Table(BaseHTML):
     @overload
@@ -1004,7 +1001,6 @@ class Table(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Tbody(BaseHTML):
     @overload
@@ -1250,7 +1246,6 @@ class Tbody(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Td(BaseHTML):
     @overload
@@ -1506,7 +1501,6 @@ class Td(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Tfoot(BaseHTML):
     @overload
@@ -1752,7 +1746,6 @@ class Tfoot(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Th(BaseHTML):
     @overload
@@ -2010,7 +2003,6 @@ class Th(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Thead(BaseHTML):
     @overload
@@ -2256,7 +2248,6 @@ class Thead(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Tr(BaseHTML):
     @overload
@@ -2502,7 +2493,6 @@ class Tr(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 caption = Caption.create
 col = Col.create

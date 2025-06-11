@@ -290,7 +290,6 @@ class Button(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Datalist(BaseHTML):
     @overload
@@ -536,7 +535,6 @@ class Datalist(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Fieldset(Element):
     @overload
@@ -594,7 +592,6 @@ class Fieldset(Element):
         Returns:
             The component.
         """
-        ...
 
 def on_submit_event_spec() -> tuple[Var[dict[str, Any]]]: ...
 def on_submit_string_event_spec() -> tuple[Var[dict[str, str]]]: ...
@@ -867,7 +864,6 @@ class Form(BaseHTML):
         Returns:
             The form component.
         """
-        ...
 
     def add_imports(self) -> ImportDict: ...
     def add_hooks(self) -> list[str]: ...
@@ -931,7 +927,7 @@ class BaseInput(BaseHTML):
         placeholder: Var[str] | str | None = None,
         read_only: Var[bool] | bool | None = None,
         required: Var[bool] | bool | None = None,
-        size: Var[float | int] | float | int | None = None,
+        size: Var[float | int | str] | float | int | str | None = None,
         src: Var[str] | str | None = None,
         step: Var[float | int | str] | float | int | str | None = None,
         type: Literal[
@@ -1259,7 +1255,6 @@ class BaseInput(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class CheckboxInput(BaseInput):
     @overload
@@ -1295,7 +1290,7 @@ class CheckboxInput(BaseInput):
         placeholder: Var[str] | str | None = None,
         read_only: Var[bool] | bool | None = None,
         required: Var[bool] | bool | None = None,
-        size: Var[float | int] | float | int | None = None,
+        size: Var[float | int | str] | float | int | str | None = None,
         src: Var[str] | str | None = None,
         step: Var[float | int | str] | float | int | str | None = None,
         type: Literal[
@@ -1627,7 +1622,6 @@ class CheckboxInput(BaseInput):
         Returns:
             The component.
         """
-        ...
 
 class ValueNumberInput(BaseInput):
     @overload
@@ -1663,7 +1657,7 @@ class ValueNumberInput(BaseInput):
         placeholder: Var[str] | str | None = None,
         read_only: Var[bool] | bool | None = None,
         required: Var[bool] | bool | None = None,
-        size: Var[float | int] | float | int | None = None,
+        size: Var[float | int | str] | float | int | str | None = None,
         src: Var[str] | str | None = None,
         step: Var[float | int | str] | float | int | str | None = None,
         type: Literal[
@@ -1995,7 +1989,6 @@ class ValueNumberInput(BaseInput):
         Returns:
             The component.
         """
-        ...
 
 class Input(BaseInput):
     @overload
@@ -2031,7 +2024,7 @@ class Input(BaseInput):
         placeholder: Var[str] | str | None = None,
         read_only: Var[bool] | bool | None = None,
         required: Var[bool] | bool | None = None,
-        size: Var[float | int] | float | int | None = None,
+        size: Var[float | int | str] | float | int | str | None = None,
         src: Var[str] | str | None = None,
         step: Var[float | int | str] | float | int | str | None = None,
         type: Literal[
@@ -2363,7 +2356,6 @@ class Input(BaseInput):
         Returns:
             The component.
         """
-        ...
 
 class Label(BaseHTML):
     @overload
@@ -2613,7 +2605,6 @@ class Label(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Legend(BaseHTML):
     @overload
@@ -2859,7 +2850,6 @@ class Legend(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Meter(BaseHTML):
     @overload
@@ -2868,12 +2858,12 @@ class Meter(BaseHTML):
         cls,
         *children,
         form: Var[str] | str | None = None,
-        high: Var[float | int] | float | int | None = None,
-        low: Var[float | int] | float | int | None = None,
-        max: Var[float | int] | float | int | None = None,
-        min: Var[float | int] | float | int | None = None,
-        optimum: Var[float | int] | float | int | None = None,
-        value: Var[float | int] | float | int | None = None,
+        high: Var[float | int | str] | float | int | str | None = None,
+        low: Var[float | int | str] | float | int | str | None = None,
+        max: Var[float | int | str] | float | int | str | None = None,
+        min: Var[float | int | str] | float | int | str | None = None,
+        optimum: Var[float | int | str] | float | int | str | None = None,
+        value: Var[float | int | str] | float | int | str | None = None,
         access_key: Var[str] | str | None = None,
         auto_capitalize: Literal[
             "characters", "none", "off", "on", "sentences", "words"
@@ -3119,7 +3109,6 @@ class Meter(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Optgroup(BaseHTML):
     @overload
@@ -3369,7 +3358,6 @@ class Optgroup(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Option(BaseHTML):
     @overload
@@ -3623,7 +3611,6 @@ class Option(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Output(BaseHTML):
     @overload
@@ -3875,7 +3862,6 @@ class Output(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Progress(BaseHTML):
     @overload
@@ -4127,7 +4113,6 @@ class Progress(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Select(BaseHTML):
     @overload
@@ -4142,7 +4127,7 @@ class Select(BaseHTML):
         multiple: Var[bool] | bool | None = None,
         name: Var[str] | str | None = None,
         required: Var[bool] | bool | None = None,
-        size: Var[int] | int | None = None,
+        size: Var[int | str] | int | str | None = None,
         value: Var[str] | str | None = None,
         default_value: Var[str] | str | None = None,
         access_key: Var[str] | str | None = None,
@@ -4395,7 +4380,6 @@ class Select(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 AUTO_HEIGHT_JS = '\nconst autoHeightOnInput = (e, is_enabled) => {\n    if (is_enabled) {\n        const el = e.target;\n        el.style.overflowY = "scroll";\n        el.style.height = "auto";\n        el.style.height = (e.target.scrollHeight) + "px";\n        if (el.form && !el.form.data_resize_on_reset) {\n            el.form.addEventListener("reset", () => window.setTimeout(() => autoHeightOnInput(e, is_enabled), 0))\n            el.form.data_resize_on_reset = true;\n        }\n    }\n}\n'
 ENTER_KEY_SUBMIT_JS = "\nconst enterKeySubmitOnKeyDown = (e, is_enabled) => {\n    if (is_enabled && e.which === 13 && !e.shiftKey) {\n        e.preventDefault();\n        if (!e.repeat) {\n            if (e.target.form) {\n                e.target.form.requestSubmit();\n            }\n        }\n    }\n}\n"
@@ -4409,19 +4393,19 @@ class Textarea(BaseHTML):
         auto_complete: Var[str] | str | None = None,
         auto_focus: Var[bool] | bool | None = None,
         auto_height: Var[bool] | bool | None = None,
-        cols: Var[int] | int | None = None,
+        cols: Var[int | str] | int | str | None = None,
         default_value: Var[str] | str | None = None,
         dirname: Var[str] | str | None = None,
         disabled: Var[bool] | bool | None = None,
         enter_key_submit: Var[bool] | bool | None = None,
         form: Var[str] | str | None = None,
-        max_length: Var[int] | int | None = None,
-        min_length: Var[int] | int | None = None,
+        max_length: Var[int | str] | int | str | None = None,
+        min_length: Var[int | str] | int | str | None = None,
         name: Var[str] | str | None = None,
         placeholder: Var[str] | str | None = None,
         read_only: Var[bool] | bool | None = None,
         required: Var[bool] | bool | None = None,
-        rows: Var[int] | int | None = None,
+        rows: Var[int | str] | int | str | None = None,
         value: Var[str] | str | None = None,
         wrap: Var[str] | str | None = None,
         access_key: Var[str] | str | None = None,
@@ -4691,7 +4675,6 @@ class Textarea(BaseHTML):
         Raises:
             ValueError: when `enter_key_submit` is combined with `on_key_down`.
         """
-        ...
 
 button = Button.create
 datalist = Datalist.create

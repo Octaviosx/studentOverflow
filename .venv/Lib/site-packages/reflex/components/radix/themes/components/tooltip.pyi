@@ -7,10 +7,9 @@ from collections.abc import Mapping, Sequence
 from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralSideType = Literal["top", "right", "bottom", "left"]
 LiteralAlignType = Literal["start", "center", "end"]
@@ -117,6 +116,5 @@ class Tooltip(RadixThemesComponent):
         Returns:
             The created component.
         """
-        ...
 
 tooltip = Tooltip.create

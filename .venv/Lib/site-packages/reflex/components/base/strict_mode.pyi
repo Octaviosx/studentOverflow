@@ -61,4 +61,3 @@ class StrictMode(Component):
         Returns:
             The component.
         """
-        ...

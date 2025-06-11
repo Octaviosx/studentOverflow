@@ -65,4 +65,3 @@ class NextLink(Component):
         Returns:
             The component.
         """
-        ...

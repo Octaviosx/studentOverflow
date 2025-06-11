@@ -8,10 +8,9 @@ from typing import Any, Literal, overload
 
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralFlexDirection = Literal["row", "column", "row-reverse", "column-reverse"]
 
@@ -151,7 +150,6 @@ class RadioGroupRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class RadioGroupItem(RadixThemesComponent):
     @overload
@@ -212,7 +210,6 @@ class RadioGroupItem(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class HighLevelRadioGroup(RadixThemesComponent):
     @overload
@@ -355,7 +352,6 @@ class HighLevelRadioGroup(RadixThemesComponent):
         Raises:
             TypeError: If the type of items is invalid.
         """
-        ...
 
 class RadioGroup(ComponentNamespace):
     root = staticmethod(RadioGroupRoot.create)
@@ -499,6 +495,5 @@ class RadioGroup(ComponentNamespace):
         Raises:
             TypeError: If the type of items is invalid.
         """
-        ...
 
 radio = radio_group = RadioGroup()

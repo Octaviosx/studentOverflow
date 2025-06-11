@@ -7,10 +7,9 @@ from collections.abc import Mapping, Sequence
 from typing import Any, overload
 
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 class AspectRatio(RadixThemesComponent):
     @overload
@@ -67,6 +66,5 @@ class AspectRatio(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 aspect_ratio = AspectRatio.create

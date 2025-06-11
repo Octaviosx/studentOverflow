@@ -95,7 +95,7 @@ class Axis(Recharts):
         unit: Var[int | str] | int | str | None = None,
         name: Var[int | str] | int | str | None = None,
         ticks: Sequence[int | str] | Var[Sequence[int | str]] | None = None,
-        tick: Var[bool] | bool | None = None,
+        tick: Var[bool | dict] | bool | dict | None = None,
         tick_count: Var[int] | int | None = None,
         tick_line: Var[bool] | bool | None = None,
         tick_size: Var[int] | int | None = None,
@@ -180,7 +180,6 @@ class Axis(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class XAxis(Axis):
     @overload
@@ -271,7 +270,7 @@ class XAxis(Axis):
         unit: Var[int | str] | int | str | None = None,
         name: Var[int | str] | int | str | None = None,
         ticks: Sequence[int | str] | Var[Sequence[int | str]] | None = None,
-        tick: Var[bool] | bool | None = None,
+        tick: Var[bool | dict] | bool | dict | None = None,
         tick_count: Var[int] | int | None = None,
         tick_line: Var[bool] | bool | None = None,
         tick_size: Var[int] | int | None = None,
@@ -361,7 +360,6 @@ class XAxis(Axis):
         Returns:
             The component.
         """
-        ...
 
 class YAxis(Axis):
     @overload
@@ -450,7 +448,7 @@ class YAxis(Axis):
         unit: Var[int | str] | int | str | None = None,
         name: Var[int | str] | int | str | None = None,
         ticks: Sequence[int | str] | Var[Sequence[int | str]] | None = None,
-        tick: Var[bool] | bool | None = None,
+        tick: Var[bool | dict] | bool | dict | None = None,
         tick_count: Var[int] | int | None = None,
         tick_line: Var[bool] | bool | None = None,
         tick_size: Var[int] | int | None = None,
@@ -538,7 +536,6 @@ class YAxis(Axis):
         Returns:
             The component.
         """
-        ...
 
 class ZAxis(Recharts):
     @overload
@@ -638,7 +635,6 @@ class ZAxis(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class Brush(Recharts):
     def get_event_triggers(self) -> dict[str, Var | Any]: ...
@@ -701,7 +697,6 @@ class Brush(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class Cartesian(Recharts):
     @overload
@@ -744,6 +739,7 @@ class Cartesian(Recharts):
             ]
         ]
         | None = None,
+        label: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
         is_animation_active: Var[bool] | bool | None = None,
         animation_begin: Var[int] | int | None = None,
         animation_duration: Var[int] | int | None = None,
@@ -793,6 +789,7 @@ class Cartesian(Recharts):
             x_axis_id: The id of x-axis which is corresponding to the data. Default: 0
             y_axis_id: The id of y-axis which is corresponding to the data. Default: 0
             legend_type: The type of icon in legend. If set to 'none', no legend item will be rendered. 'line' | 'plainline' | 'square' | 'rect'| 'circle' | 'cross' | 'diamond' | 'star' | 'triangle' | 'wye' | 'none' optional
+            label: If false set, labels will not be drawn. If true set, labels will be drawn which have the props calculated internally. Default: False
             is_animation_active: If set false, animation of bar will be disabled. Default: True
             animation_begin: Specifies when the animation should begin, the unit of this option is ms. Default: 0
             animation_duration: Specifies the duration of animation, the unit of this option is ms. Default: 1500
@@ -821,7 +818,6 @@ class Cartesian(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class Area(Cartesian):
     @overload
@@ -830,7 +826,7 @@ class Area(Cartesian):
         cls,
         *children,
         stroke: Color | Var[Color | str] | str | None = None,
-        stroke_width: Var[int] | int | None = None,
+        stroke_width: Var[float | int | str] | float | int | str | None = None,
         fill: Color | Var[Color | str] | str | None = None,
         type_: Literal[
             "basis",
@@ -871,10 +867,9 @@ class Area(Cartesian):
         | None = None,
         dot: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
         active_dot: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
-        label: Var[bool] | bool | None = None,
         base_line: Sequence[dict[str, Any]]
-        | Var[Sequence[dict[str, Any]] | str]
-        | str
+        | Var[Sequence[dict[str, Any]] | int]
+        | int
         | None = None,
         points: Sequence[dict[str, Any]] | Var[Sequence[dict[str, Any]]] | None = None,
         stack_id: Var[int | str] | int | str | None = None,
@@ -914,6 +909,7 @@ class Area(Cartesian):
             ]
         ]
         | None = None,
+        label: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
         is_animation_active: Var[bool] | bool | None = None,
         animation_begin: Var[int] | int | None = None,
         animation_duration: Var[int] | int | None = None,
@@ -964,7 +960,6 @@ class Area(Cartesian):
             type_: The interpolation type of area. And customized interpolation function can be set to type. 'basis' | 'basisClosed' | 'basisOpen' | 'bumpX' | 'bumpY' | 'bump' | 'linear' | 'linearClosed' | 'natural' | 'monotoneX' | 'monotoneY' | 'monotone' | 'step' | 'stepBefore' | 'stepAfter'. Default: "monotone"
             dot: If false set, dots will not be drawn. If true set, dots will be drawn which have the props calculated internally. Default: False
             active_dot: The dot is shown when user enter an area chart and this chart has tooltip. If false set, no active dot will not be drawn. If true set, active dot will be drawn which have the props calculated internally. Default: {stroke: rx.color("accent", 2), fill: rx.color("accent", 10)}
-            label: If set false, labels will not be drawn. If set true, labels will be drawn which have the props calculated internally. Default: False
             base_line: The value which can describle the line, usually calculated internally.
             points: The coordinates of all the points in the area, usually calculated internally.
             stack_id: The stack id of area, when two areas have the same value axis and same stack_id, then the two areas are stacked in order.
@@ -974,6 +969,7 @@ class Area(Cartesian):
             x_axis_id: The id of x-axis which is corresponding to the data. Default: 0
             y_axis_id: The id of y-axis which is corresponding to the data. Default: 0
             legend_type: The type of icon in legend. If set to 'none', no legend item will be rendered. 'line' | 'plainline' | 'square' | 'rect'| 'circle' | 'cross' | 'diamond' | 'star' | 'triangle' | 'wye' | 'none' optional
+            label: If false set, labels will not be drawn. If true set, labels will be drawn which have the props calculated internally. Default: False
             is_animation_active: If set false, animation of bar will be disabled. Default: True
             animation_begin: Specifies when the animation should begin, the unit of this option is ms. Default: 0
             animation_duration: Specifies the duration of animation, the unit of this option is ms. Default: 1500
@@ -1002,7 +998,6 @@ class Area(Cartesian):
         Returns:
             The component.
         """
-        ...
 
 class Bar(Cartesian):
     @overload
@@ -1011,10 +1006,9 @@ class Bar(Cartesian):
         cls,
         *children,
         stroke: Color | Var[Color | str] | str | None = None,
-        stroke_width: Var[int] | int | None = None,
+        stroke_width: Var[float | int | str] | float | int | str | None = None,
         fill: Color | Var[Color | str] | str | None = None,
         background: Var[bool] | bool | None = None,
-        label: Var[bool] | bool | None = None,
         stack_id: Var[str] | str | None = None,
         unit: Var[int | str] | int | str | None = None,
         min_point_size: Var[int] | int | None = None,
@@ -1057,6 +1051,7 @@ class Bar(Cartesian):
             ]
         ]
         | None = None,
+        label: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
         is_animation_active: Var[bool] | bool | None = None,
         animation_begin: Var[int] | int | None = None,
         animation_duration: Var[int] | int | None = None,
@@ -1103,7 +1098,6 @@ class Bar(Cartesian):
             stroke_width: The width of the line stroke.
             fill: The width of the line stroke. Default: Color("accent", 9)
             background: If false set, background of bars will not be drawn. If true set, background of bars will be drawn which have the props calculated internally. Default: False
-            label: If false set, labels will not be drawn. If true set, labels will be drawn which have the props calculated internally. Default: False
             stack_id: The stack id of bar, when two bars have the same value axis and same stack_id, then the two bars are stacked in order.
             unit: The unit of data. This option will be used in tooltip.
             min_point_size: The minimal height of a bar in a horizontal BarChart, or the minimal width of a bar in a vertical BarChart. By default, 0 values are not shown. To visualize a 0 (or close to zero) point, set the minimal point size to a pixel value like 3. In stacked bar charts, minPointSize might not be respected for tightly packed values. So we strongly recommend not using this prop in stacked BarCharts.
@@ -1116,6 +1110,7 @@ class Bar(Cartesian):
             x_axis_id: The id of x-axis which is corresponding to the data. Default: 0
             y_axis_id: The id of y-axis which is corresponding to the data. Default: 0
             legend_type: The type of icon in legend. If set to 'none', no legend item will be rendered. 'line' | 'plainline' | 'square' | 'rect'| 'circle' | 'cross' | 'diamond' | 'star' | 'triangle' | 'wye' | 'none' optional
+            label: If false set, labels will not be drawn. If true set, labels will be drawn which have the props calculated internally. Default: False
             is_animation_active: If set false, animation of bar will be disabled. Default: True
             animation_begin: Specifies when the animation should begin, the unit of this option is ms. Default: 0
             animation_duration: Specifies the duration of animation, the unit of this option is ms. Default: 1500
@@ -1142,7 +1137,6 @@ class Bar(Cartesian):
         Returns:
             The component.
         """
-        ...
 
 class Line(Cartesian):
     @overload
@@ -1188,10 +1182,9 @@ class Line(Cartesian):
         ]
         | None = None,
         stroke: Color | Var[Color | str] | str | None = None,
-        stroke_width: Var[int] | int | None = None,
+        stroke_width: Var[float | int | str] | float | int | str | None = None,
         dot: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
         active_dot: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
-        label: Var[bool] | bool | None = None,
         hide: Var[bool] | bool | None = None,
         connect_nulls: Var[bool] | bool | None = None,
         unit: Var[int | str] | int | str | None = None,
@@ -1232,6 +1225,7 @@ class Line(Cartesian):
             ]
         ]
         | None = None,
+        label: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
         is_animation_active: Var[bool] | bool | None = None,
         animation_begin: Var[int] | int | None = None,
         animation_duration: Var[int] | int | None = None,
@@ -1280,7 +1274,6 @@ class Line(Cartesian):
             stroke_width: The width of the line stroke. Default: 1
             dot: The dot is shown when mouse enter a line chart and this chart has tooltip. If false set, no active dot will not be drawn. If true set, active dot will be drawn which have the props calculated internally. Default: {"stroke": rx.color("accent", 10), "fill": rx.color("accent", 4)}
             active_dot: The dot is shown when user enter an area chart and this chart has tooltip. If false set, no active dot will not be drawn. If true set, active dot will be drawn which have the props calculated internally. Default: {"stroke": rx.color("accent", 2), "fill": rx.color("accent", 10)}
-            label: If false set, labels will not be drawn. If true set, labels will be drawn which have the props calculated internally. Default: False
             hide: Hides the line when true, useful when toggling visibility state via legend. Default: False
             connect_nulls: Whether to connect a graph line across null points.
             unit: The unit of data. This option will be used in tooltip.
@@ -1291,6 +1284,7 @@ class Line(Cartesian):
             x_axis_id: The id of x-axis which is corresponding to the data. Default: 0
             y_axis_id: The id of y-axis which is corresponding to the data. Default: 0
             legend_type: The type of icon in legend. If set to 'none', no legend item will be rendered. 'line' | 'plainline' | 'square' | 'rect'| 'circle' | 'cross' | 'diamond' | 'star' | 'triangle' | 'wye' | 'none' optional
+            label: If false set, labels will not be drawn. If true set, labels will be drawn which have the props calculated internally. Default: False
             is_animation_active: If set false, animation of bar will be disabled. Default: True
             animation_begin: Specifies when the animation should begin, the unit of this option is ms. Default: 0
             animation_duration: Specifies the duration of animation, the unit of this option is ms. Default: 1500
@@ -1318,7 +1312,6 @@ class Line(Cartesian):
         Returns:
             The component.
         """
-        ...
 
 class Scatter(Recharts):
     @overload
@@ -1446,7 +1439,6 @@ class Scatter(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class Funnel(Recharts):
     @overload
@@ -1564,7 +1556,6 @@ class Funnel(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class ErrorBar(Recharts):
     @overload
@@ -1576,7 +1567,7 @@ class ErrorBar(Recharts):
         data_key: Var[int | str] | int | str | None = None,
         width: Var[int] | int | None = None,
         stroke: Color | Var[Color | str] | str | None = None,
-        stroke_width: Var[float | int] | float | int | None = None,
+        stroke_width: Var[float | int | str] | float | int | str | None = None,
         style: Sequence[Mapping[str, Any]]
         | Mapping[str, Any]
         | Var[Mapping[str, Any]]
@@ -1626,7 +1617,6 @@ class ErrorBar(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class Reference(Recharts):
     @overload
@@ -1690,7 +1680,6 @@ class Reference(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class ReferenceLine(Reference):
     @overload
@@ -1701,7 +1690,7 @@ class ReferenceLine(Reference):
         x: Var[int | str] | int | str | None = None,
         y: Var[int | str] | int | str | None = None,
         stroke: Color | Var[Color | str] | str | None = None,
-        stroke_width: Var[int | str] | int | str | None = None,
+        stroke_width: Var[float | int | str] | float | int | str | None = None,
         segment: Sequence[Any] | None = None,
         x_axis_id: Var[int | str] | int | str | None = None,
         y_axis_id: Var[int | str] | int | str | None = None,
@@ -1764,7 +1753,6 @@ class ReferenceLine(Reference):
         Returns:
             The component.
         """
-        ...
 
 class ReferenceDot(Reference):
     @overload
@@ -1846,7 +1834,6 @@ class ReferenceDot(Reference):
         Returns:
             The component.
         """
-        ...
 
 class ReferenceArea(Recharts):
     @overload
@@ -1922,7 +1909,6 @@ class ReferenceArea(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class Grid(Recharts):
     @overload
@@ -1982,7 +1968,6 @@ class Grid(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class CartesianGrid(Grid):
     @overload
@@ -2058,7 +2043,6 @@ class CartesianGrid(Grid):
         Returns:
             The component.
         """
-        ...
 
 class CartesianAxis(Grid):
     @overload
@@ -2070,8 +2054,8 @@ class CartesianAxis(Grid):
         | Var[Literal["bottom", "left", "right", "top"]]
         | None = None,
         view_box: Var[dict[str, Any]] | dict[str, Any] | None = None,
-        axis_line: Var[bool] | bool | None = None,
-        tick: Var[bool] | bool | None = None,
+        axis_line: Var[bool | dict] | bool | dict | None = None,
+        tick: Var[bool | dict] | bool | dict | None = None,
         tick_line: Var[bool] | bool | None = None,
         tick_size: Var[int] | int | None = None,
         interval: Literal["preserveEnd", "preserveStart", "preserveStartEnd"]
@@ -2142,7 +2126,6 @@ class CartesianAxis(Grid):
         Returns:
             The component.
         """
-        ...
 
 area = Area.create
 bar = Bar.create

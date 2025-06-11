@@ -8,10 +8,9 @@ from types import SimpleNamespace
 from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 class DataListRoot(RadixThemesComponent):
     @overload
@@ -87,7 +86,6 @@ class DataListRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DataListItem(RadixThemesComponent):
     @overload
@@ -152,7 +150,6 @@ class DataListItem(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DataListLabel(RadixThemesComponent):
     @overload
@@ -282,7 +279,6 @@ class DataListLabel(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DataListValue(RadixThemesComponent):
     @overload
@@ -337,7 +333,6 @@ class DataListValue(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DataList(SimpleNamespace):
     root = staticmethod(DataListRoot.create)

@@ -316,7 +316,6 @@ class BaseList(BaseHTML, MarkdownComponentMap):
         Returns:
             The list component.
         """
-        ...
 
     def add_style(self) -> dict[str, Any] | None: ...
 
@@ -604,7 +603,6 @@ class UnorderedList(BaseList, Ul):
         Returns:
             The list component.
         """
-        ...
 
 class OrderedList(BaseList, Ol):
     @overload
@@ -898,7 +896,6 @@ class OrderedList(BaseList, Ol):
         Returns:
             The list component.
         """
-        ...
 
 class ListItem(Li, MarkdownComponentMap):
     @overload
@@ -1144,7 +1141,6 @@ class ListItem(Li, MarkdownComponentMap):
         Returns:
             The list item component.
         """
-        ...
 
 class List(ComponentNamespace):
     item = staticmethod(ListItem.create)
@@ -1432,7 +1428,6 @@ class List(ComponentNamespace):
         Returns:
             The list component.
         """
-        ...
 
 list_ns = List()
 list_item = list_ns.item

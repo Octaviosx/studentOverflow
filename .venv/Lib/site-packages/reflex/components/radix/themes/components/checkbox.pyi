@@ -8,10 +8,9 @@ from typing import Any, Literal, overload
 
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralCheckboxSize = Literal["1", "2", "3"]
 LiteralCheckboxVariant = Literal["classic", "surface", "soft"]
@@ -156,7 +155,6 @@ class Checkbox(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class HighLevelCheckbox(RadixThemesComponent):
     @overload
@@ -298,7 +296,6 @@ class HighLevelCheckbox(RadixThemesComponent):
         Returns:
             The checkbox component with a label.
         """
-        ...
 
 class CheckboxNamespace(ComponentNamespace):
     @staticmethod
@@ -438,6 +435,5 @@ class CheckboxNamespace(ComponentNamespace):
         Returns:
             The checkbox component with a label.
         """
-        ...
 
 checkbox = CheckboxNamespace()

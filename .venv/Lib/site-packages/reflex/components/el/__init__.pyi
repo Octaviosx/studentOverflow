@@ -94,6 +94,7 @@ from .elements.media import Circle as Circle
 from .elements.media import Defs as Defs
 from .elements.media import Ellipse as Ellipse
 from .elements.media import Embed as Embed
+from .elements.media import G as G
 from .elements.media import Iframe as Iframe
 from .elements.media import Img as Img
 from .elements.media import Line as Line
@@ -118,6 +119,7 @@ from .elements.media import circle as circle
 from .elements.media import defs as defs
 from .elements.media import ellipse as ellipse
 from .elements.media import embed as embed
+from .elements.media import g as g
 from .elements.media import iframe as iframe
 from .elements.media import image as image
 from .elements.media import img as img

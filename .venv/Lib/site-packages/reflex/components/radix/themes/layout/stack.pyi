@@ -304,7 +304,6 @@ class Stack(Flex):
         Returns:
             The stack component.
         """
-        ...
 
 class VStack(Stack):
     @overload
@@ -598,7 +597,6 @@ class VStack(Stack):
         Returns:
             The stack component.
         """
-        ...
 
 class HStack(Stack):
     @overload
@@ -892,7 +890,6 @@ class HStack(Stack):
         Returns:
             The stack component.
         """
-        ...
 
 stack = Stack.create
 hstack = HStack.create

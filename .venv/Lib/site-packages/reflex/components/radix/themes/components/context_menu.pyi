@@ -8,10 +8,10 @@ from typing import Any, Literal, overload
 
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
 
-from ..base import RadixThemesComponent
 from .checkbox import Checkbox
 from .radio_group import HighLevelRadioGroup
 
@@ -81,7 +81,6 @@ class ContextMenuRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuTrigger(RadixThemesComponent):
     @overload
@@ -138,7 +137,6 @@ class ContextMenuTrigger(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuContent(RadixThemesComponent):
     @overload
@@ -304,7 +302,6 @@ class ContextMenuContent(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuSub(RadixThemesComponent):
     @overload
@@ -365,7 +362,6 @@ class ContextMenuSub(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuSubTrigger(RadixThemesComponent):
     @overload
@@ -426,7 +422,6 @@ class ContextMenuSubTrigger(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuSubContent(RadixThemesComponent):
     @overload
@@ -513,7 +508,6 @@ class ContextMenuSubContent(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuItem(RadixThemesComponent):
     @overload
@@ -638,7 +632,6 @@ class ContextMenuItem(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuSeparator(RadixThemesComponent):
     @overload
@@ -693,7 +686,6 @@ class ContextMenuSeparator(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuCheckbox(Checkbox):
     @overload
@@ -837,7 +829,6 @@ class ContextMenuCheckbox(Checkbox):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuLabel(RadixThemesComponent):
     @overload
@@ -894,7 +885,6 @@ class ContextMenuLabel(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuGroup(RadixThemesComponent):
     @overload
@@ -951,7 +941,6 @@ class ContextMenuGroup(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuRadioGroup(RadixThemesComponent):
     @overload
@@ -1012,7 +1001,6 @@ class ContextMenuRadioGroup(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class ContextMenuRadioItem(HighLevelRadioGroup):
     @overload
@@ -1161,7 +1149,6 @@ class ContextMenuRadioItem(HighLevelRadioGroup):
         Raises:
             TypeError: If the type of items is invalid.
         """
-        ...
 
 class ContextMenu(ComponentNamespace):
     root = staticmethod(ContextMenuRoot.create)

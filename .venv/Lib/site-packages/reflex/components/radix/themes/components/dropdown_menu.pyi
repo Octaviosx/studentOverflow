@@ -8,10 +8,12 @@ from typing import Any, Literal, overload
 
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import (
+    RadixThemesComponent,
+    RadixThemesTriggerComponent,
+)
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent, RadixThemesTriggerComponent
 
 LiteralDirType = Literal["ltr", "rtl"]
 LiteralSizeType = Literal["1", "2"]
@@ -83,7 +85,6 @@ class DropdownMenuRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DropdownMenuTrigger(RadixThemesTriggerComponent):
     @overload
@@ -129,7 +130,6 @@ class DropdownMenuTrigger(RadixThemesTriggerComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class DropdownMenuContent(RadixThemesComponent):
     @overload
@@ -295,7 +295,6 @@ class DropdownMenuContent(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DropdownMenuSubTrigger(RadixThemesTriggerComponent):
     @overload
@@ -343,7 +342,6 @@ class DropdownMenuSubTrigger(RadixThemesTriggerComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class DropdownMenuSub(RadixThemesComponent):
     @overload
@@ -404,7 +402,6 @@ class DropdownMenuSub(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DropdownMenuSubContent(RadixThemesComponent):
     @overload
@@ -491,7 +488,6 @@ class DropdownMenuSubContent(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DropdownMenuItem(RadixThemesComponent):
     @overload
@@ -616,7 +612,6 @@ class DropdownMenuItem(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DropdownMenuSeparator(RadixThemesComponent):
     @overload
@@ -671,7 +666,6 @@ class DropdownMenuSeparator(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DropdownMenu(ComponentNamespace):
     root = staticmethod(DropdownMenuRoot.create)

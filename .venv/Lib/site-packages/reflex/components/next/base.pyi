@@ -12,8 +12,6 @@ from reflex.event import EventType
 from reflex.vars.base import Var
 
 class NextComponent(Component):
-    ...
-
     @overload
     @classmethod
     def create(  # type: ignore
@@ -63,4 +61,3 @@ class NextComponent(Component):
         Returns:
             The component.
         """
-        ...

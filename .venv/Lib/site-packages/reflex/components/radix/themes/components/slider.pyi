@@ -7,10 +7,9 @@ from collections.abc import Mapping, Sequence
 from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType, passthrough_event_spec
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 on_value_event_spec = (
     passthrough_event_spec(list[int | float]),
@@ -173,6 +172,5 @@ class Slider(RadixThemesComponent):
         Returns:
             The component.
         """
-        ...
 
 slider = Slider.create

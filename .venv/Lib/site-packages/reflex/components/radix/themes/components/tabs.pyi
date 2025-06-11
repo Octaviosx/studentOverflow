@@ -8,10 +8,9 @@ from typing import Any, Literal, overload
 
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 vertical_orientation_css = "&[data-orientation='vertical']"
 
@@ -85,7 +84,6 @@ class TabsRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TabsList(RadixThemesComponent):
     def add_style(self): ...
@@ -148,7 +146,6 @@ class TabsList(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TabsTrigger(RadixThemesComponent):
     @overload
@@ -264,7 +261,6 @@ class TabsTrigger(RadixThemesComponent):
         Returns:
             The TabsTrigger Component.
         """
-        ...
 
     def add_style(self) -> dict[str, Any] | None: ...
 
@@ -326,7 +322,6 @@ class TabsContent(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class Tabs(ComponentNamespace):
     root = staticmethod(TabsRoot.create)
@@ -400,6 +395,5 @@ class Tabs(ComponentNamespace):
         Returns:
             A new component instance.
         """
-        ...
 
 tabs = Tabs()

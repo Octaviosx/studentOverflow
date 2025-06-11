@@ -62,7 +62,6 @@ class Gridjs(Component):
         Returns:
             The component.
         """
-        ...
 
 class DataTable(Gridjs):
     @overload
@@ -129,6 +128,5 @@ class DataTable(Gridjs):
         Raises:
             ValueError: If a pandas dataframe is passed in and columns are also provided.
         """
-        ...
 
     def add_imports(self) -> ImportDict: ...

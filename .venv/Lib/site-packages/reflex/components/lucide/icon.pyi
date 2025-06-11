@@ -61,7 +61,6 @@ class LucideIconComponent(Component):
         Returns:
             The component.
         """
-        ...
 
 class Icon(LucideIconComponent):
     @overload
@@ -121,7 +120,6 @@ class Icon(LucideIconComponent):
         Returns:
             The created component.
         """
-        ...
 
 class DynamicIcon(LucideIconComponent):
     @overload
@@ -174,7 +172,6 @@ class DynamicIcon(LucideIconComponent):
         Returns:
             The component.
         """
-        ...
 
 LUCIDE_ICON_LIST = [
     "a_arrow_down",

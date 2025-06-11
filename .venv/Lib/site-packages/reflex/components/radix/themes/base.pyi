@@ -128,7 +128,6 @@ class CommonMarginProps(Component):
         Returns:
             The component.
         """
-        ...
 
 class CommonPaddingProps(Component):
     @overload
@@ -236,7 +235,6 @@ class CommonPaddingProps(Component):
         Returns:
             The component.
         """
-        ...
 
 class RadixLoadingProp(Component):
     @overload
@@ -290,7 +288,6 @@ class RadixLoadingProp(Component):
         Returns:
             The component.
         """
-        ...
 
 class RadixThemesComponent(Component):
     @overload
@@ -345,7 +342,6 @@ class RadixThemesComponent(Component):
         Returns:
             A new component instance.
         """
-        ...
 
 class RadixThemesTriggerComponent(RadixThemesComponent):
     @overload
@@ -390,7 +386,6 @@ class RadixThemesTriggerComponent(RadixThemesComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class Theme(RadixThemesComponent):
     @overload
@@ -528,7 +523,6 @@ class Theme(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
     def add_imports(self) -> ImportDict | list[ImportDict]: ...
 
@@ -588,7 +582,6 @@ class ThemePanel(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class RadixThemesColorModeProvider(Component):
     @overload
@@ -640,7 +633,6 @@ class RadixThemesColorModeProvider(Component):
         Returns:
             The component.
         """
-        ...
 
 theme = Theme.create
 theme_panel = ThemePanel.create

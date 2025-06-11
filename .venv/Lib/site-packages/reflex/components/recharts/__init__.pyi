@@ -79,10 +79,10 @@ from .polar import polar_radius_axis as polar_radius_axis
 from .polar import radar as radar
 from .polar import radial_bar as radial_bar
 from .recharts import LiteralAnimationEasing as LiteralAnimationEasing
-from .recharts import LiteralAreaType as LiteralAreaType
 from .recharts import LiteralAxisType as LiteralAxisType
 from .recharts import LiteralBarChartStackOffset as LiteralBarChartStackOffset
 from .recharts import LiteralComposedChartBaseValue as LiteralComposedChartBaseValue
+from .recharts import LiteralCurveType as LiteralCurveType
 from .recharts import LiteralDirection as LiteralDirection
 from .recharts import LiteralGridType as LiteralGridType
 from .recharts import LiteralIconType as LiteralIconType

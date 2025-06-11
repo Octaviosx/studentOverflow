@@ -8,10 +8,9 @@ from types import SimpleNamespace
 from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 class CheckboxGroupRoot(RadixThemesComponent):
     @overload
@@ -141,7 +140,6 @@ class CheckboxGroupRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class CheckboxGroupItem(RadixThemesComponent):
     @overload
@@ -200,7 +198,6 @@ class CheckboxGroupItem(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class CheckboxGroup(SimpleNamespace):
     root = staticmethod(CheckboxGroupRoot.create)

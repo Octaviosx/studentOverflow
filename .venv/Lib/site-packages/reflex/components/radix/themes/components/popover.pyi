@@ -9,10 +9,12 @@ from typing import Any, Literal, overload
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import (
+    RadixThemesComponent,
+    RadixThemesTriggerComponent,
+)
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent, RadixThemesTriggerComponent
 
 class PopoverRoot(RadixThemesComponent):
     @overload
@@ -75,7 +77,6 @@ class PopoverRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class PopoverTrigger(RadixThemesTriggerComponent):
     @overload
@@ -120,7 +121,6 @@ class PopoverTrigger(RadixThemesTriggerComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class PopoverContent(elements.Div, RadixThemesComponent):
     @overload
@@ -414,7 +414,6 @@ class PopoverContent(elements.Div, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class PopoverClose(RadixThemesTriggerComponent):
     @overload
@@ -459,7 +458,6 @@ class PopoverClose(RadixThemesTriggerComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class Popover(ComponentNamespace):
     root = staticmethod(PopoverRoot.create)

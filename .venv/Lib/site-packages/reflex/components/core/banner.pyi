@@ -93,7 +93,6 @@ class ConnectionToaster(Fragment):
         Returns:
             The connection toaster component.
         """
-        ...
 
 class ConnectionBanner(Component):
     @overload
@@ -137,7 +136,6 @@ class ConnectionBanner(Component):
         Returns:
             The connection banner component.
         """
-        ...
 
 class ConnectionModal(Component):
     @overload
@@ -181,7 +179,6 @@ class ConnectionModal(Component):
         Returns:
             The connection banner component.
         """
-        ...
 
 class WifiOffPulse(Icon):
     @overload
@@ -235,7 +232,6 @@ class WifiOffPulse(Icon):
         Returns:
             The icon component with default props applied.
         """
-        ...
 
     def add_imports(self) -> dict[str, str | ImportVar | list[str | ImportVar]]: ...
 
@@ -482,7 +478,6 @@ class ConnectionPulser(Div):
         Returns:
             The connection pulser component.
         """
-        ...
 
 class BackendDisabled(Div):
     @overload
@@ -727,7 +722,6 @@ class BackendDisabled(Div):
         Returns:
             The backend disabled component.
         """
-        ...
 
 connection_banner = ConnectionBanner.create
 connection_modal = ConnectionModal.create

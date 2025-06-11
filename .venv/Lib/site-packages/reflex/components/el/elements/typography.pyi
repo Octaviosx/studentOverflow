@@ -258,7 +258,6 @@ class Blockquote(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Dd(BaseHTML):
     @overload
@@ -504,7 +503,6 @@ class Dd(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Div(BaseHTML):
     @overload
@@ -750,7 +748,6 @@ class Div(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Dl(BaseHTML):
     @overload
@@ -996,7 +993,6 @@ class Dl(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Dt(BaseHTML):
     @overload
@@ -1242,7 +1238,6 @@ class Dt(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Figcaption(BaseHTML):
     @overload
@@ -1488,7 +1483,6 @@ class Figcaption(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Hr(BaseHTML):
     @overload
@@ -1734,7 +1728,6 @@ class Hr(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Li(BaseHTML):
     @overload
@@ -1980,7 +1973,6 @@ class Li(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Menu(BaseHTML):
     @overload
@@ -2228,7 +2220,6 @@ class Menu(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Ol(BaseHTML):
     @overload
@@ -2482,7 +2473,6 @@ class Ol(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class P(BaseHTML):
     @overload
@@ -2728,7 +2718,6 @@ class P(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Pre(BaseHTML):
     @overload
@@ -2974,7 +2963,6 @@ class Pre(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Ul(BaseHTML):
     @overload
@@ -3220,7 +3208,6 @@ class Ul(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Ins(BaseHTML):
     @overload
@@ -3470,7 +3457,6 @@ class Ins(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Del(BaseHTML):
     @overload
@@ -3720,7 +3706,6 @@ class Del(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 blockquote = Blockquote.create
 dd = Dd.create

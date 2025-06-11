@@ -10,10 +10,9 @@ from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
 from reflex.components.markdown.markdown import MarkdownComponentMap
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralType = Literal[
     "p",
@@ -423,7 +422,6 @@ class Text(elements.Span, RadixThemesComponent, MarkdownComponentMap):
         Returns:
             A new component instance.
         """
-        ...
 
 class Span(Text):
     @overload
@@ -812,7 +810,6 @@ class Span(Text):
         Returns:
             A new component instance.
         """
-        ...
 
 class Em(elements.Em, RadixThemesComponent):
     @overload
@@ -1061,7 +1058,6 @@ class Em(elements.Em, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class Kbd(elements.Kbd, RadixThemesComponent):
     @overload
@@ -1314,7 +1310,6 @@ class Kbd(elements.Kbd, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class Quote(elements.Q, RadixThemesComponent):
     @overload
@@ -1565,7 +1560,6 @@ class Quote(elements.Q, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class Strong(elements.Strong, RadixThemesComponent):
     @overload
@@ -1814,7 +1808,6 @@ class Strong(elements.Strong, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TextNamespace(ComponentNamespace):
     em = staticmethod(Em.create)
@@ -2207,6 +2200,5 @@ class TextNamespace(ComponentNamespace):
         Returns:
             A new component instance.
         """
-        ...
 
 text = TextNamespace()

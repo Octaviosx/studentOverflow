@@ -177,7 +177,6 @@ class Toaster(Component):
         Returns:
             The toaster component.
         """
-        ...
 
 class ToastNamespace(ComponentNamespace):
     provider = staticmethod(Toaster.create)
@@ -210,6 +209,5 @@ class ToastNamespace(ComponentNamespace):
         Returns:
             The toast event.
         """
-        ...
 
 toast = ToastNamespace()

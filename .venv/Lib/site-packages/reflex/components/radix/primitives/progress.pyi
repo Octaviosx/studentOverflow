@@ -64,7 +64,6 @@ class ProgressComponent(RadixPrimitiveComponentWithClassName):
         Returns:
             The component.
         """
-        ...
 
 class ProgressRoot(ProgressComponent):
     def add_style(self) -> dict[str, Any] | None: ...
@@ -123,7 +122,6 @@ class ProgressRoot(ProgressComponent):
         Returns:
             The component.
         """
-        ...
 
 class ProgressIndicator(ProgressComponent):
     def add_style(self) -> dict[str, Any] | None: ...
@@ -242,7 +240,6 @@ class ProgressIndicator(ProgressComponent):
         Returns:
             The component.
         """
-        ...
 
 class Progress(ProgressRoot):
     @overload
@@ -363,7 +360,6 @@ class Progress(ProgressRoot):
         Returns:
             The progress bar.
         """
-        ...
 
 class ProgressNamespace(ComponentNamespace):
     root = staticmethod(ProgressRoot.create)
@@ -485,6 +481,5 @@ class ProgressNamespace(ComponentNamespace):
         Returns:
             The progress bar.
         """
-        ...
 
 progress = ProgressNamespace()

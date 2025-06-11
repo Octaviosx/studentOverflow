@@ -71,7 +71,6 @@ class ChartBase(RechartsCharts):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class CategoricalChartBase(ChartBase):
     @overload
@@ -149,7 +148,6 @@ class CategoricalChartBase(ChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class AreaChart(CategoricalChartBase):
     @overload
@@ -232,7 +230,6 @@ class AreaChart(CategoricalChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class BarChart(CategoricalChartBase):
     @overload
@@ -320,7 +317,6 @@ class BarChart(CategoricalChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class LineChart(CategoricalChartBase):
     @overload
@@ -398,7 +394,6 @@ class LineChart(CategoricalChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class ComposedChart(CategoricalChartBase):
     @overload
@@ -489,7 +484,6 @@ class ComposedChart(CategoricalChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class PieChart(ChartBase):
     @overload
@@ -555,7 +549,6 @@ class PieChart(ChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class RadarChart(ChartBase):
     def get_event_triggers(self) -> dict[str, Var | Any]: ...
@@ -619,7 +612,6 @@ class RadarChart(ChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class RadialBarChart(ChartBase):
     @overload
@@ -701,7 +693,6 @@ class RadialBarChart(ChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class ScatterChart(ChartBase):
     def get_event_triggers(self) -> dict[str, Var | Any]: ...
@@ -757,7 +748,6 @@ class ScatterChart(ChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class FunnelChart(ChartBase):
     @overload
@@ -823,7 +813,6 @@ class FunnelChart(ChartBase):
         Returns:
             The chart component wrapped in a responsive container.
         """
-        ...
 
 class Treemap(RechartsCharts):
     @overload
@@ -903,7 +892,6 @@ class Treemap(RechartsCharts):
         Returns:
             The Treemap component wrapped in a responsive container.
         """
-        ...
 
 area_chart = AreaChart.create
 bar_chart = BarChart.create

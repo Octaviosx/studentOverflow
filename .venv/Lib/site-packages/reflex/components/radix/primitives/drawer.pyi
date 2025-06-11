@@ -64,7 +64,6 @@ class DrawerComponent(RadixPrimitiveComponent):
         Returns:
             The component.
         """
-        ...
 
 LiteralDirectionType = Literal["top", "bottom", "left", "right"]
 
@@ -150,7 +149,6 @@ class DrawerRoot(DrawerComponent):
         Returns:
             The component.
         """
-        ...
 
 class DrawerTrigger(DrawerComponent):
     @overload
@@ -204,7 +202,6 @@ class DrawerTrigger(DrawerComponent):
         Returns:
             The new DrawerTrigger instance.
         """
-        ...
 
 class DrawerPortal(DrawerComponent):
     @overload
@@ -258,7 +255,6 @@ class DrawerPortal(DrawerComponent):
         Returns:
             The component.
         """
-        ...
 
 class DrawerContent(DrawerComponent):
     @overload
@@ -321,7 +317,6 @@ class DrawerContent(DrawerComponent):
         Returns:
                  The drawer content.
         """
-        ...
 
 class DrawerOverlay(DrawerComponent):
     @overload
@@ -375,7 +370,6 @@ class DrawerOverlay(DrawerComponent):
         Returns:
             The component.
         """
-        ...
 
 class DrawerClose(DrawerTrigger):
     @overload
@@ -429,7 +423,6 @@ class DrawerClose(DrawerTrigger):
         Returns:
             The new DrawerTrigger instance.
         """
-        ...
 
 class DrawerTitle(DrawerComponent):
     @overload
@@ -483,7 +476,6 @@ class DrawerTitle(DrawerComponent):
         Returns:
             The component.
         """
-        ...
 
 class DrawerDescription(DrawerComponent):
     @overload
@@ -537,7 +529,6 @@ class DrawerDescription(DrawerComponent):
         Returns:
             The component.
         """
-        ...
 
 class DrawerHandle(DrawerComponent):
     @overload
@@ -591,7 +582,6 @@ class DrawerHandle(DrawerComponent):
         Returns:
             The component.
         """
-        ...
 
 class Drawer(ComponentNamespace):
     root = staticmethod(DrawerRoot.create)
@@ -683,6 +673,5 @@ class Drawer(ComponentNamespace):
         Returns:
             The component.
         """
-        ...
 
 drawer = Drawer()

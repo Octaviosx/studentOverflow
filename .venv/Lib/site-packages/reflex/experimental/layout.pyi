@@ -237,7 +237,6 @@ class Sidebar(Box, MemoizationLeaf):
         Returns:
             The sidebar component.
         """
-        ...
 
     def add_style(self) -> dict[str, Any] | None: ...
     def add_hooks(self) -> list[Var]: ...
@@ -309,7 +308,6 @@ class DrawerSidebar(DrawerRoot):
         Returns:
             The drawer sidebar component.
         """
-        ...
 
 sidebar_trigger_style = {
     "position": "fixed",
@@ -362,7 +360,6 @@ class SidebarTrigger(Fragment):
         Returns:
             The sidebar trigger component.
         """
-        ...
 
 class Layout(Box):
     @overload
@@ -587,7 +584,6 @@ class Layout(Box):
         Returns:
             The layout component.
         """
-        ...
 
 class LayoutNamespace(ComponentNamespace):
     drawer_sidebar = staticmethod(DrawerSidebar.create)
@@ -814,6 +810,5 @@ class LayoutNamespace(ComponentNamespace):
         Returns:
             The layout component.
         """
-        ...
 
 layout = LayoutNamespace()

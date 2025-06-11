@@ -113,4 +113,3 @@ class ReactPlayer(NoSSRComponent):
         Returns:
             The component.
         """
-        ...

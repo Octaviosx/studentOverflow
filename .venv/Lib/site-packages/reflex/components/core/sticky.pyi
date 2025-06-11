@@ -234,7 +234,6 @@ class StickyLogo(Svg):
         Returns:
             The simple Reflex logo SVG.
         """
-        ...
 
     def add_style(self): ...
 
@@ -587,7 +586,6 @@ class StickyLabel(Text):
         Returns:
             The sticky label.
         """
-        ...
 
     def add_style(self): ...
 
@@ -843,7 +841,6 @@ class StickyBadge(A):
         Returns:
             The sticky badge.
         """
-        ...
 
     def add_style(self): ...
 
@@ -1100,6 +1097,5 @@ class StickyNamespace(ComponentNamespace):
         Returns:
             The sticky badge.
         """
-        ...
 
 sticky = StickyNamespace()

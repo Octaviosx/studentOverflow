@@ -61,7 +61,6 @@ class NextDocumentLib(Component):
         Returns:
             The component.
         """
-        ...
 
 class Html(NextDocumentLib):
     @overload
@@ -114,7 +113,6 @@ class Html(NextDocumentLib):
         Returns:
             The component.
         """
-        ...
 
 class DocumentHead(NextDocumentLib):
     @overload
@@ -166,7 +164,6 @@ class DocumentHead(NextDocumentLib):
         Returns:
             The component.
         """
-        ...
 
 class Main(NextDocumentLib):
     @overload
@@ -218,7 +215,6 @@ class Main(NextDocumentLib):
         Returns:
             The component.
         """
-        ...
 
 class NextScript(NextDocumentLib):
     @overload
@@ -270,4 +266,3 @@ class NextScript(NextDocumentLib):
         Returns:
             The component.
         """
-        ...

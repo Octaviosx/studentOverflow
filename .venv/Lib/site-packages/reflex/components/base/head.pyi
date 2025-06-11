@@ -61,7 +61,6 @@ class NextHeadLib(Component):
         Returns:
             The component.
         """
-        ...
 
 class Head(NextHeadLib, MemoizationLeaf):
     @overload
@@ -113,6 +112,5 @@ class Head(NextHeadLib, MemoizationLeaf):
         Returns:
             The memoization leaf
         """
-        ...
 
 head = Head.create

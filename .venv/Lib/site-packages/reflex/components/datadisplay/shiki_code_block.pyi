@@ -962,7 +962,6 @@ class ShikiCodeBlock(Component, MarkdownComponentMap):
         Returns:
             The code block component.
         """
-        ...
 
     def add_imports(self) -> dict[str, list[str]]: ...
     @classmethod
@@ -1585,7 +1584,6 @@ class ShikiHighLevelCodeBlock(ShikiCodeBlock):
         Returns:
             The code block component.
         """
-        ...
 
 class TransformerNamespace(ComponentNamespace):
     shikijs = ShikiJsTransformer
@@ -2207,6 +2205,5 @@ class CodeblockNamespace(ComponentNamespace):
         Returns:
             The code block component.
         """
-        ...
 
 code_block = CodeblockNamespace()

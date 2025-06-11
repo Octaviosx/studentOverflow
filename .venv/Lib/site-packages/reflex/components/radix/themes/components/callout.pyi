@@ -9,10 +9,9 @@ from typing import Any, Literal, overload
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 CalloutVariant = Literal["soft", "surface", "outline"]
 
@@ -336,7 +335,6 @@ class CalloutRoot(elements.Div, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class CalloutIcon(elements.Div, RadixThemesComponent):
     @overload
@@ -585,7 +583,6 @@ class CalloutIcon(elements.Div, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class CalloutText(elements.P, RadixThemesComponent):
     @overload
@@ -834,7 +831,6 @@ class CalloutText(elements.P, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class Callout(CalloutRoot):
     @overload
@@ -1157,7 +1153,6 @@ class Callout(CalloutRoot):
         Returns:
             The callout component.
         """
-        ...
 
 class CalloutNamespace(ComponentNamespace):
     root = staticmethod(CalloutRoot.create)
@@ -1482,6 +1477,5 @@ class CalloutNamespace(ComponentNamespace):
         Returns:
             The callout component.
         """
-        ...
 
 callout = CalloutNamespace()

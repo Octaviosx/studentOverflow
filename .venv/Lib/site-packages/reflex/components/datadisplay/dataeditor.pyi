@@ -274,7 +274,6 @@ class DataEditor(NoSSRComponent):
         Returns:
             The DataEditor component.&
         """
-        ...
 
 @serializer
 def serialize_dataeditortheme(theme: DataEditorTheme): ...

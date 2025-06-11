@@ -13,8 +13,16 @@ class EstadoLogin(rx.State):
     contrasenia: str = ''
     error_msg: str = ''
     id_usuario: int = None
-    
 
+    @classmethod
+    def get_id_usuario_(cls) -> int:
+        try:
+            raw = cls.id_usuario.get_value()
+            print(raw)
+            return int(raw) #if raw is not None else 0
+        except Exception:
+            return 
+    
     @rx.event
     def asignarUsuario(self, usuario_ingresado):
         self.usuario = usuario_ingresado
@@ -43,9 +51,8 @@ class EstadoLogin(rx.State):
                     #debuggear que usario detecta
                     #print(f"[DEBUG] user = {usuario}")
                     if bcrypt.checkpw(self.contrasenia.encode(), hashed_password.encode()):
-                        self.id_usuario = id_usuario
+                        self.id_usuario = int(id_usuario)
                         self.error_msg = ''
-                        self.usuario = ''
                         self.contrasenia = ''
                         AppState.cargar_datos,
                         loading_view(),
@@ -64,6 +71,8 @@ class EstadoLogin(rx.State):
             
     def logout(self):
         self.id_usuario = None  # Limpiar sesión
+        self.usuario = ''
+        self.contrasenia = ''
         rx.spinner
         AppState.cargar_datos()
         return rx.redirect("/#")  # Redirigir a login      

@@ -255,4 +255,3 @@ class Body(elements.Body):
         Returns:
             The component.
         """
-        ...

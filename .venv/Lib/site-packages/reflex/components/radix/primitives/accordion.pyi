@@ -137,7 +137,6 @@ class AccordionComponent(RadixPrimitiveComponent):
         Returns:
             The component.
         """
-        ...
 
 def on_value_change(value: Var[str | list[str]]) -> tuple[Var[str | list[str]]]: ...
 
@@ -288,7 +287,6 @@ class AccordionRoot(AccordionComponent):
         Returns:
             The component.
         """
-        ...
 
 class AccordionItem(AccordionComponent):
     @overload
@@ -414,7 +412,6 @@ class AccordionItem(AccordionComponent):
         Returns:
             The accordion item.
         """
-        ...
 
     def add_style(self) -> dict[str, Any] | None: ...
 
@@ -534,7 +531,6 @@ class AccordionHeader(AccordionComponent):
         Returns:
             The Accordion header Component.
         """
-        ...
 
     def add_style(self) -> dict[str, Any] | None: ...
 
@@ -654,7 +650,6 @@ class AccordionTrigger(AccordionComponent):
         Returns:
             The Accordion trigger Component.
         """
-        ...
 
     def add_style(self) -> dict[str, Any] | None: ...
 
@@ -710,7 +705,6 @@ class AccordionIcon(Icon):
         Returns:
             The Accordion icon Component.
         """
-        ...
 
 class AccordionContent(AccordionComponent):
     def add_imports(self) -> dict: ...
@@ -829,7 +823,6 @@ class AccordionContent(AccordionComponent):
         Returns:
             The Accordion content Component.
         """
-        ...
 
     def add_custom_code(self) -> list[str]: ...
     def add_style(self) -> dict[str, Any] | None: ...

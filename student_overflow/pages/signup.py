@@ -2,6 +2,7 @@ import reflex as rx
 import bcrypt
 from ..models.usuario import Usuario
 from ..UI.logo import logo
+from ..UI.footer import footer
 
 class EstadoRegistro(rx.State):
     usuario: str = ''
@@ -51,53 +52,113 @@ class EstadoRegistro(rx.State):
             
 @rx.page(route='/registro', title='Registro')
 def registro() -> rx.Component:
-    return rx.container(
-        rx.color_mode.button(position="top-right"),
-        rx.center(
-            rx.vstack(
+    return rx.vstack(
+        rx.flex(
+            rx.card(
                 rx.vstack(
-                    logo(),
-                    padding_left='170px',
-                    width='120%'
+                    rx.center(
+                        rx.vstack(
+                            logo(),
+                            padding_left='4em'
+                        ),
+                        rx.heading(
+                            "Registrate",
+                            size="6",
+                            as_="h2",
+                            text_align="center",
+                            width="100%",
+                        ),
+                        direction="column",
+                        spacing="5",
+                        width="100%",
+                    ),
+                    rx.vstack(
+                        rx.text(
+                            "Usuario",
+                            size="3",
+                            weight="medium",
+                            text_align="left",
+                            width="100%",
+                        ),
+                        rx.input(
+                            rx.input.slot(rx.icon("user")),
+                            placeholder="user.dev",
+                            type="user",
+                            size="3",
+                            width="100%",
+                            required=True,
+                            value=EstadoRegistro.usuario, #permite guardar la información
+                            on_change=EstadoRegistro.asignarUsuario
+                        ),
+                        justify="start",
+                        spacing="2",
+                        width="100%",
+                    ),
+                    rx.vstack(
+                        rx.text(
+                            "Correo Electronico",
+                            size="3",
+                            weight="medium",
+                            text_align="left",
+                            width="100%",
+                        ),
+                        rx.input(
+                            rx.input.slot(rx.icon("at-sign")),
+                            placeholder="user@correo.dev",
+                            type="email",
+                            size="3",
+                            width="100%",
+                            value=EstadoRegistro.email, #permite guardar la información
+                            on_change=EstadoRegistro.asignarCorreo
+                        ),
+                        justify="start",
+                        spacing="2",
+                        width="100%",
+                    ),
+                    rx.vstack(
+                        rx.hstack(
+                            rx.text(
+                                "Contraseña",
+                                size="3",
+                                weight="medium",
+                            ),
+                            justify="start",
+                            width="100%",
+                        ),
+                        rx.input(
+                            rx.input.slot(rx.icon("lock")),
+                            placeholder="Ingresa tu contraseña",
+                            type="password",
+                            size="3",
+                            width="100%",
+                            value=EstadoRegistro.contrasenia, #permite guardar la información
+                            on_change=EstadoRegistro.asignarContrasenia
+                        ),
+                        justify="start",
+                        spacing="2",
+                        width="100%",
+                    ),
+                    rx.button(
+                        "Registrarse",
+                        on_click=EstadoRegistro.registrarUsuario,
+                        variant='soft',
+                        color_scheme='lime',
+                        radius='medium',
+                        margin_top='15px',
+                        width='100%'
+                    ),
+                    spacing="6",
+                    width="100%",
                 ),
-                rx.heading('Registrate', size='8', margin_bottom="10px", margin_top="40px"),
-                rx.text('Ingresa tu nombre de usuario'),
-                rx.input(
-                    placeholder='Usuario',
-                    size='3',
-                    type='text',
-                    required=True,
-                    value=EstadoRegistro.usuario, #permite guardar la información
-                    on_change=EstadoRegistro.asignarUsuario
-                ),
-                rx.text('Ingresa tu correo electronico'),
-                rx.input(
-                    placeholder='Correo elecronico',
-                    size='3',
-                    required=True,
-                    type='email',
-                    value=EstadoRegistro.email, #permite guardar la información
-                    on_change=EstadoRegistro.asignarCorreo
-                ),
-                rx.text('Ingresa una contraseña'),
-                rx.input(
-                    placeholder='Contraseña',
-                    size='3',
-                    required=True,
-                    type='password',
-                    value=EstadoRegistro.contrasenia, #permite guardar la información
-                    on_change=EstadoRegistro.asignarContrasenia
-                ),
-                rx.button(
-                    "Registrarse",
-                    on_click=EstadoRegistro.registrarUsuario,
-                    variant='soft',
-                    color_scheme='lime',
-                    radius='medium',
-                    margin_top='15px'
-                ),
-                align_items='center'
+                max_width="28em",
+                size="4",
+                width="100%",
             ),
-            height="80vh"
-        )
+            justify="center",
+            align='center',
+            height="92vh",
+            #width='100vh'
+            padding_left='38%'
+        ),
+        footer(),
     )

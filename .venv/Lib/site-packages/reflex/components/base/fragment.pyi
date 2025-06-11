@@ -61,6 +61,5 @@ class Fragment(Component):
         Returns:
             The component.
         """
-        ...
 
 fragment = Fragment.create

@@ -8,10 +8,9 @@ from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralButtonSize = Literal["1", "2", "3", "4"]
 
@@ -320,6 +319,5 @@ class Inset(elements.Div, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 inset = Inset.create

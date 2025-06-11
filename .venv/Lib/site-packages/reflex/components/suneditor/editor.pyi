@@ -197,4 +197,3 @@ class Editor(NoSSRComponent):
         Raises:
             ValueError: If set_options is a state Var.
         """
-        ...

@@ -127,4 +127,3 @@ class Moment(NoSSRComponent):
         Returns:
             The component.
         """
-        ...

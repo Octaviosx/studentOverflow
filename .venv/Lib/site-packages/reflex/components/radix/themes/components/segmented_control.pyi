@@ -8,10 +8,9 @@ from types import SimpleNamespace
 from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 def on_value_change(value: Var[str | list[str]]) -> tuple[Var[str | list[str]]]: ...
 
@@ -151,7 +150,6 @@ class SegmentedControlRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class SegmentedControlItem(RadixThemesComponent):
     @overload
@@ -208,7 +206,6 @@ class SegmentedControlItem(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class SegmentedControl(SimpleNamespace):
     root = staticmethod(SegmentedControlRoot.create)

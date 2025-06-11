@@ -9,10 +9,12 @@ from typing import Any, Literal, overload
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import (
+    RadixThemesComponent,
+    RadixThemesTriggerComponent,
+)
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent, RadixThemesTriggerComponent
 
 LiteralContentSize = Literal["1", "2", "3", "4"]
 
@@ -75,7 +77,6 @@ class AlertDialogRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class AlertDialogTrigger(RadixThemesTriggerComponent):
     @overload
@@ -120,7 +121,6 @@ class AlertDialogTrigger(RadixThemesTriggerComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class AlertDialogContent(elements.Div, RadixThemesComponent):
     @overload
@@ -384,7 +384,6 @@ class AlertDialogContent(elements.Div, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class AlertDialogTitle(RadixThemesComponent):
     @overload
@@ -439,7 +438,6 @@ class AlertDialogTitle(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class AlertDialogDescription(RadixThemesComponent):
     @overload
@@ -494,7 +492,6 @@ class AlertDialogDescription(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class AlertDialogAction(RadixThemesTriggerComponent):
     @overload
@@ -539,7 +536,6 @@ class AlertDialogAction(RadixThemesTriggerComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class AlertDialogCancel(RadixThemesTriggerComponent):
     @overload
@@ -584,7 +580,6 @@ class AlertDialogCancel(RadixThemesTriggerComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class AlertDialog(ComponentNamespace):
     root = staticmethod(AlertDialogRoot.create)

@@ -20,6 +20,8 @@ def navbar_link(text: str, url: str) -> rx.Component:
     return rx.link(
         rx.text(text, size="4", weight="medium", padding_top='5px'), href=url, padding_top='5px'
     )
+    
+
 def navbar_searchbar() -> rx.Component:
     return rx.box(
         rx.hstack(
@@ -27,11 +29,23 @@ def navbar_searchbar() -> rx.Component:
                 logo(),
             ),
             rx.hstack(
-                navbar_link("Inicio", "/#"),
-                navbar_link("Contacto", "/#"),                
+                rx.link(
+                    "Inicio",
+                    href="/",
+                    size="3",
+                    color_scheme='lime',
+                    padding_top='5px',
+                ),                
+                rx.link(
+                    "Contacto",
+                    href="#",
+                    size="3",
+                    padding_top='5px',
+                    color_scheme='lime'
+                ),                
                 rx.input(
                     rx.input.slot(rx.icon("search")),
-                    placeholder="Search...",
+                    placeholder="Buscar...",
                     type="search",
                     size="2",
                     justify="end",
@@ -40,7 +54,7 @@ def navbar_searchbar() -> rx.Component:
                 rx.button(
                     "Registrarse",
                     size="2",
-                    variant="solid",
+                    variant="outline",
                     color_scheme="lime",
                     on_click=Redirecciones.mandarRegistro
                 ),
@@ -73,7 +87,6 @@ def navbar_link(text: str, url: str) -> rx.Component:
         rx.text(text, size="4", weight="medium"), href=url
     )
 
-
 def navbar_search_user() -> rx.Component:
     return rx.box(
         rx.hstack(
@@ -82,16 +95,29 @@ def navbar_search_user() -> rx.Component:
                 #align_items="left",
             ),
             rx.hstack(
-                navbar_link("Inicio", "/#"),
-                navbar_link("Contacto", "/#"),                
+                rx.link(
+                    "Inicio",
+                    href="/",
+                    size="3",
+                    padding_top='5px',
+                    color_scheme='lime'
+                ),                
+                rx.link(
+                    "Contacto",
+                    href="#",
+                    size="3",
+                    padding_top='5px',
+                    color_scheme='lime'
+                ),                  
                 rx.input(
                     rx.input.slot(rx.icon("search")),
-                    placeholder="Search...",
+                    placeholder="Buscar...",
                     type="search",
                     size="2",
                     #justify="center",
                     width="600px",
                 ),
+                rx.text(f"Hola, {EstadoLogin.usuario} 👋", size="3", padding_top='5px'),
                 rx.menu.root(
                     rx.menu.trigger(
                         rx.icon_button(

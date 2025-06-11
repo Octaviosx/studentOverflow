@@ -984,7 +984,6 @@ class CodeBlock(Component, MarkdownComponentMap):
         Returns:
             The text component.
         """
-        ...
 
     def add_style(self): ...
     @classmethod
@@ -1625,6 +1624,5 @@ class CodeblockNamespace(ComponentNamespace):
         Returns:
             The text component.
         """
-        ...
 
 code_block = CodeblockNamespace()

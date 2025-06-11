@@ -9,10 +9,12 @@ from typing import Any, Literal, overload
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import (
+    RadixThemesComponent,
+    RadixThemesTriggerComponent,
+)
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent, RadixThemesTriggerComponent
 
 class DialogRoot(RadixThemesComponent):
     @overload
@@ -73,7 +75,6 @@ class DialogRoot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DialogTrigger(RadixThemesTriggerComponent):
     @overload
@@ -118,7 +119,6 @@ class DialogTrigger(RadixThemesTriggerComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class DialogTitle(RadixThemesComponent):
     @overload
@@ -173,7 +173,6 @@ class DialogTitle(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DialogContent(elements.Div, RadixThemesComponent):
     @overload
@@ -439,7 +438,6 @@ class DialogContent(elements.Div, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DialogDescription(RadixThemesComponent):
     @overload
@@ -494,7 +492,6 @@ class DialogDescription(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class DialogClose(RadixThemesTriggerComponent):
     @overload
@@ -539,7 +536,6 @@ class DialogClose(RadixThemesTriggerComponent):
         Returns:
             The new RadixThemesTriggerComponent instance.
         """
-        ...
 
 class Dialog(ComponentNamespace):
     root = staticmethod(DialogRoot.create)
@@ -605,6 +601,5 @@ class Dialog(ComponentNamespace):
         Returns:
             A new component instance.
         """
-        ...
 
 dialog = Dialog()

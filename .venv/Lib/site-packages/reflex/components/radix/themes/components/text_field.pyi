@@ -9,10 +9,9 @@ from typing import Any, Literal, overload
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType, KeyInputInfo
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralTextFieldSize = Literal["1", "2", "3"]
 LiteralTextFieldVariant = Literal["classic", "surface", "soft"]
@@ -404,7 +403,6 @@ class TextFieldRoot(elements.Input, RadixThemesComponent):
         Returns:
             The component.
         """
-        ...
 
 class TextFieldSlot(RadixThemesComponent):
     @overload
@@ -521,7 +519,6 @@ class TextFieldSlot(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TextField(ComponentNamespace):
     slot = staticmethod(TextFieldSlot.create)
@@ -910,6 +907,5 @@ class TextField(ComponentNamespace):
         Returns:
             The component.
         """
-        ...
 
 input = text_field = TextField()

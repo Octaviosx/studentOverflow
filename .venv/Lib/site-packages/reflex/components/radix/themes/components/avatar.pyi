@@ -7,10 +7,9 @@ from collections.abc import Mapping, Sequence
 from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralSize = Literal["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 
@@ -147,6 +146,5 @@ class Avatar(RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 avatar = Avatar.create

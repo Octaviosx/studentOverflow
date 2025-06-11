@@ -256,7 +256,6 @@ class Body(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Address(BaseHTML):
     @overload
@@ -502,7 +501,6 @@ class Address(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Article(BaseHTML):
     @overload
@@ -748,7 +746,6 @@ class Article(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Aside(BaseHTML):
     @overload
@@ -994,7 +991,6 @@ class Aside(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Footer(BaseHTML):
     @overload
@@ -1240,7 +1236,6 @@ class Footer(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Header(BaseHTML):
     @overload
@@ -1486,7 +1481,6 @@ class Header(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class H1(BaseHTML):
     @overload
@@ -1732,7 +1726,6 @@ class H1(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class H2(BaseHTML):
     @overload
@@ -1978,7 +1971,6 @@ class H2(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class H3(BaseHTML):
     @overload
@@ -2224,7 +2216,6 @@ class H3(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class H4(BaseHTML):
     @overload
@@ -2470,7 +2461,6 @@ class H4(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class H5(BaseHTML):
     @overload
@@ -2716,7 +2706,6 @@ class H5(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class H6(BaseHTML):
     @overload
@@ -2962,7 +2951,6 @@ class H6(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Main(BaseHTML):
     @overload
@@ -3208,7 +3196,6 @@ class Main(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Nav(BaseHTML):
     @overload
@@ -3454,7 +3441,6 @@ class Nav(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Section(BaseHTML):
     @overload
@@ -3700,7 +3686,6 @@ class Section(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 address = Address.create
 article = Article.create

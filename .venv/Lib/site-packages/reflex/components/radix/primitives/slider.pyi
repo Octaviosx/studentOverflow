@@ -67,7 +67,6 @@ class SliderComponent(RadixPrimitiveComponentWithClassName):
         Returns:
             The component.
         """
-        ...
 
 def on_value_event_spec(value: Var[list[int]]) -> tuple[Var[list[int]]]: ...
 
@@ -141,7 +140,6 @@ class SliderRoot(SliderComponent):
         Returns:
             The component.
         """
-        ...
 
 class SliderTrack(SliderComponent):
     def add_style(self) -> dict[str, Any] | None: ...
@@ -196,7 +194,6 @@ class SliderTrack(SliderComponent):
         Returns:
             The component.
         """
-        ...
 
 class SliderRange(SliderComponent):
     def add_style(self) -> dict[str, Any] | None: ...
@@ -251,7 +248,6 @@ class SliderRange(SliderComponent):
         Returns:
             The component.
         """
-        ...
 
 class SliderThumb(SliderComponent):
     def add_style(self) -> dict[str, Any] | None: ...
@@ -306,7 +302,6 @@ class SliderThumb(SliderComponent):
         Returns:
             The component.
         """
-        ...
 
 class Slider(ComponentNamespace):
     root = staticmethod(SliderRoot.create)

@@ -7,10 +7,13 @@ from collections.abc import Mapping, Sequence
 from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import (
+    CommonMarginProps,
+    CommonPaddingProps,
+    RadixThemesComponent,
+)
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import CommonMarginProps, CommonPaddingProps, RadixThemesComponent
 
 LiteralBoolNumber = Literal["0", "1"]
 
@@ -161,4 +164,3 @@ class LayoutComponent(CommonMarginProps, CommonPaddingProps, RadixThemesComponen
         Returns:
             A new component instance.
         """
-        ...

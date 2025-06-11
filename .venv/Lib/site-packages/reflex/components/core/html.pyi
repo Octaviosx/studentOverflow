@@ -260,6 +260,5 @@ class Html(Div):
         Raises:
             ValueError: If children are not provided or more than one child is provided.
         """
-        ...
 
 html = Html.create

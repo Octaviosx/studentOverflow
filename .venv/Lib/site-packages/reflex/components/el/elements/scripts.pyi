@@ -256,7 +256,6 @@ class Canvas(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Noscript(BaseHTML):
     @overload
@@ -502,7 +501,6 @@ class Noscript(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Script(BaseHTML):
     @overload
@@ -790,7 +788,6 @@ class Script(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 canvas = Canvas.create
 noscript = Noscript.create

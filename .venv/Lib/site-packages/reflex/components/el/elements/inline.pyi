@@ -311,7 +311,6 @@ class A(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Abbr(BaseHTML):
     @overload
@@ -557,7 +556,6 @@ class Abbr(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class B(BaseHTML):
     @overload
@@ -803,7 +801,6 @@ class B(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Bdi(BaseHTML):
     @overload
@@ -1049,7 +1046,6 @@ class Bdi(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Bdo(BaseHTML):
     @overload
@@ -1295,7 +1291,6 @@ class Bdo(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Br(BaseHTML):
     @overload
@@ -1541,7 +1536,6 @@ class Br(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Cite(BaseHTML):
     @overload
@@ -1787,7 +1781,6 @@ class Cite(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Code(BaseHTML):
     @overload
@@ -2033,7 +2026,6 @@ class Code(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Data(BaseHTML):
     @overload
@@ -2281,7 +2273,6 @@ class Data(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Dfn(BaseHTML):
     @overload
@@ -2527,7 +2518,6 @@ class Dfn(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Em(BaseHTML):
     @overload
@@ -2773,7 +2763,6 @@ class Em(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class I(BaseHTML):
     @overload
@@ -3019,7 +3008,6 @@ class I(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Kbd(BaseHTML):
     @overload
@@ -3265,7 +3253,6 @@ class Kbd(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Mark(BaseHTML):
     @overload
@@ -3511,7 +3498,6 @@ class Mark(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Q(BaseHTML):
     @overload
@@ -3759,7 +3745,6 @@ class Q(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Rp(BaseHTML):
     @overload
@@ -4005,7 +3990,6 @@ class Rp(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Rt(BaseHTML):
     @overload
@@ -4251,7 +4235,6 @@ class Rt(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Ruby(BaseHTML):
     @overload
@@ -4497,7 +4480,6 @@ class Ruby(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class S(BaseHTML):
     @overload
@@ -4743,7 +4725,6 @@ class S(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Samp(BaseHTML):
     @overload
@@ -4989,7 +4970,6 @@ class Samp(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Small(BaseHTML):
     @overload
@@ -5235,7 +5215,6 @@ class Small(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Span(BaseHTML):
     @overload
@@ -5481,7 +5460,6 @@ class Span(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Strong(BaseHTML):
     @overload
@@ -5727,7 +5705,6 @@ class Strong(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Sub(BaseHTML):
     @overload
@@ -5973,7 +5950,6 @@ class Sub(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Sup(BaseHTML):
     @overload
@@ -6219,7 +6195,6 @@ class Sup(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Time(BaseHTML):
     @overload
@@ -6467,7 +6442,6 @@ class Time(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class U(BaseHTML):
     @overload
@@ -6713,7 +6687,6 @@ class U(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 class Wbr(BaseHTML):
     @overload
@@ -6959,7 +6932,6 @@ class Wbr(BaseHTML):
         Returns:
             The component.
         """
-        ...
 
 a = A.create
 abbr = Abbr.create

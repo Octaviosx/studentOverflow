@@ -89,7 +89,6 @@ class UploadFilesProvider(Component):
         Returns:
             The component.
         """
-        ...
 
 class GhostUpload(Fragment):
     @overload
@@ -143,7 +142,6 @@ class GhostUpload(Fragment):
         Returns:
             The component.
         """
-        ...
 
 class Upload(MemoizationLeaf):
     is_used: ClassVar[bool] = False
@@ -219,7 +217,6 @@ class Upload(MemoizationLeaf):
         Returns:
             The upload component.
         """
-        ...
 
 class StyledUpload(Upload):
     @overload
@@ -293,7 +290,6 @@ class StyledUpload(Upload):
         Returns:
             The styled upload component.
         """
-        ...
 
 class UploadNamespace(ComponentNamespace):
     root = Upload.create
@@ -367,6 +363,5 @@ class UploadNamespace(ComponentNamespace):
         Returns:
             The styled upload component.
         """
-        ...
 
 upload = UploadNamespace()

@@ -60,8 +60,8 @@ class Pie(Recharts):
             ]
         ]
         | None = None,
-        label: Var[bool] | bool | None = None,
-        label_line: Var[bool] | bool | None = None,
+        label: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
+        label_line: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
         stroke: Color | Var[Color | str] | str | None = None,
         fill: Color | Var[Color | str] | str | None = None,
         is_animation_active: Var[bool] | bool | None = None,
@@ -131,7 +131,6 @@ class Pie(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class Radar(Recharts):
     def get_event_triggers(self) -> dict[str, Var | Any]: ...
@@ -142,7 +141,7 @@ class Radar(Recharts):
         *children,
         data_key: Var[int | str] | int | str | None = None,
         points: Sequence[dict[str, Any]] | Var[Sequence[dict[str, Any]]] | None = None,
-        dot: Var[bool] | bool | None = None,
+        dot: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
         stroke: Color | Var[Color | str] | str | None = None,
         fill: Color | Var[Color | str] | str | None = None,
         fill_opacity: Var[float] | float | None = None,
@@ -175,7 +174,7 @@ class Radar(Recharts):
             ]
         ]
         | None = None,
-        label: Var[bool] | bool | None = None,
+        label: Var[bool | dict[str, Any]] | bool | dict[str, Any] | None = None,
         is_animation_active: Var[bool] | bool | None = None,
         animation_begin: Var[int] | int | None = None,
         animation_duration: Var[int] | int | None = None,
@@ -227,7 +226,6 @@ class Radar(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class RadialBar(Recharts):
     def get_event_triggers(self) -> dict[str, Var | Any]: ...
@@ -325,7 +323,6 @@ class RadialBar(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class PolarAngleAxis(Recharts):
     @overload
@@ -411,7 +408,6 @@ class PolarAngleAxis(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class PolarGrid(Recharts):
     @overload
@@ -481,7 +477,6 @@ class PolarGrid(Recharts):
         Returns:
             The component.
         """
-        ...
 
 class PolarRadiusAxis(Recharts):
     def get_event_triggers(self) -> dict[str, Var | Any]: ...
@@ -591,7 +586,6 @@ class PolarRadiusAxis(Recharts):
         Returns:
             The component.
         """
-        ...
 
 pie = Pie.create
 radar = Radar.create

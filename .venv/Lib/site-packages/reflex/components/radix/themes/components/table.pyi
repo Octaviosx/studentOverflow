@@ -9,10 +9,9 @@ from typing import Any, Literal, overload
 from reflex.components.component import ComponentNamespace
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import CommonPaddingProps, RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import CommonPaddingProps, RadixThemesComponent
 
 class TableRoot(elements.Table, RadixThemesComponent):
     @overload
@@ -276,7 +275,6 @@ class TableRoot(elements.Table, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TableHeader(elements.Thead, RadixThemesComponent):
     @overload
@@ -525,7 +523,6 @@ class TableHeader(elements.Thead, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TableRow(elements.Tr, RadixThemesComponent):
     @overload
@@ -778,7 +775,6 @@ class TableRow(elements.Tr, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TableColumnHeaderCell(elements.Th, RadixThemesComponent):
     @overload
@@ -1053,7 +1049,6 @@ class TableColumnHeaderCell(elements.Th, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TableBody(elements.Tbody, RadixThemesComponent):
     @overload
@@ -1302,7 +1297,6 @@ class TableBody(elements.Tbody, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TableCell(elements.Td, CommonPaddingProps, RadixThemesComponent):
     @overload
@@ -1631,7 +1625,6 @@ class TableCell(elements.Td, CommonPaddingProps, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class TableRowHeaderCell(elements.Th, CommonPaddingProps, RadixThemesComponent):
     @overload
@@ -1962,7 +1955,6 @@ class TableRowHeaderCell(elements.Th, CommonPaddingProps, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 class Table(ComponentNamespace):
     root = staticmethod(TableRoot.create)

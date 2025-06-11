@@ -8,10 +8,9 @@ from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
 from reflex.components.el import elements
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 LiteralGridFlow = Literal["row", "column", "dense", "row-dense", "column-dense"]
 
@@ -334,6 +333,5 @@ class Grid(elements.Div, RadixThemesComponent):
         Returns:
             A new component instance.
         """
-        ...
 
 grid = Grid.create

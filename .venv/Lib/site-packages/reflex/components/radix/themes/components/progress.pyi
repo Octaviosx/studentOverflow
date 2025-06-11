@@ -7,10 +7,9 @@ from collections.abc import Mapping, Sequence
 from typing import Any, Literal, overload
 
 from reflex.components.core.breakpoints import Breakpoints
+from reflex.components.radix.themes.base import RadixThemesComponent
 from reflex.event import EventType
 from reflex.vars.base import Var
-
-from ..base import RadixThemesComponent
 
 class Progress(RadixThemesComponent):
     @overload
@@ -145,6 +144,5 @@ class Progress(RadixThemesComponent):
         Returns:
             The Progress Component.
         """
-        ...
 
 progress = Progress.create

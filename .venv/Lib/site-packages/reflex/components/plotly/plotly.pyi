@@ -145,7 +145,6 @@ class Plotly(NoSSRComponent):
         Returns:
             The Plotly component.
         """
-        ...
 
 CREATE_PLOTLY_COMPONENT: ImportDict
 
@@ -250,7 +249,6 @@ class PlotlyBasic(Plotly):
         Returns:
             The Plotly component.
         """
-        ...
 
 class PlotlyCartesian(Plotly):
     def add_imports(self) -> ImportDict | list[ImportDict]: ...
@@ -351,7 +349,6 @@ class PlotlyCartesian(Plotly):
         Returns:
             The Plotly component.
         """
-        ...
 
 class PlotlyGeo(Plotly):
     def add_imports(self) -> ImportDict | list[ImportDict]: ...
@@ -452,7 +449,6 @@ class PlotlyGeo(Plotly):
         Returns:
             The Plotly component.
         """
-        ...
 
 class PlotlyGl3d(Plotly):
     def add_imports(self) -> ImportDict | list[ImportDict]: ...
@@ -553,7 +549,6 @@ class PlotlyGl3d(Plotly):
         Returns:
             The Plotly component.
         """
-        ...
 
 class PlotlyGl2d(Plotly):
     def add_imports(self) -> ImportDict | list[ImportDict]: ...
@@ -654,7 +649,6 @@ class PlotlyGl2d(Plotly):
         Returns:
             The Plotly component.
         """
-        ...
 
 class PlotlyMapbox(Plotly):
     def add_imports(self) -> ImportDict | list[ImportDict]: ...
@@ -755,7 +749,6 @@ class PlotlyMapbox(Plotly):
         Returns:
             The Plotly component.
         """
-        ...
 
 class PlotlyFinance(Plotly):
     def add_imports(self) -> ImportDict | list[ImportDict]: ...
@@ -856,7 +849,6 @@ class PlotlyFinance(Plotly):
         Returns:
             The Plotly component.
         """
-        ...
 
 class PlotlyStrict(Plotly):
     def add_imports(self) -> ImportDict | list[ImportDict]: ...
@@ -957,4 +949,3 @@ class PlotlyStrict(Plotly):
         Returns:
             The Plotly component.
         """
-        ...
