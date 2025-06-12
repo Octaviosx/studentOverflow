@@ -72,6 +72,9 @@ def navbar_searchbar() -> rx.Component:
             justify="between",
             align_items="end",
         ),
+        has_background='Bool',
+        accent_color="teal",
+        panel_background='solid',
         width="100%",       # Asegura que el navbar ocupe todo el ancho
         padding="1.3rem",
         position="sticky",

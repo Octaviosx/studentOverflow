@@ -23,9 +23,9 @@ class EstadoPublicacion(rx.State):
     @rx.event    
     async def publicar(self):
         estado_login = await self.get_state(EstadoLogin)
+        # Si estado_login no es None, entonces usa estado_login.id_usuario.
+        # Si estado_login es None (por ejemplo, no hay estado de sesión cargado), entonces asigna 0.
         id_usuario = estado_login.id_usuario if estado_login else 0
-
-        print(f"DEBUG publicar - id_usuario: {id_usuario}")
 
         if not id_usuario:
             EstadoLogin.error_msg = "No estás logueado"
@@ -48,7 +48,7 @@ class EstadoPublicacion(rx.State):
 def publicacion() -> rx.Component:
     def navbar_condicional():
         return rx.cond(
-            EstadoLogin.id_usuario != None,
+            EstadoLogin.id_usuario != 0,
             navbar_search_user(),
             navbar_searchbar()
     )
@@ -119,6 +119,9 @@ def publicacion() -> rx.Component:
                 max_width="50em",
                 width="1000px",
                 ),
+            
+            padding_top='18vh',
+            padding_bottom='18vh',
             padding_left='50vh',
             align_items='center'
             ),        

@@ -145,7 +145,8 @@ def registro() -> rx.Component:
                         color_scheme='lime',
                         radius='medium',
                         margin_top='15px',
-                        width='100%'
+                        width='100%',
+                        size='3'
                     ),
                     spacing="6",
                     width="100%",

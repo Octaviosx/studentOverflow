@@ -18,7 +18,7 @@ async def getNavbar():
 def index() -> rx.Component:
     def navbar_condicional():
         return rx.cond(
-            EstadoLogin.id_usuario != None,
+            EstadoLogin.id_usuario != 0,
             navbar_search_user(),
             navbar_searchbar()
         )

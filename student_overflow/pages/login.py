@@ -70,7 +70,7 @@ class EstadoLogin(rx.State):
             self.error_msg = ''
             
     def logout(self):
-        self.id_usuario = None  # Limpiar sesión
+        self.id_usuario = 0  # Limpiar sesión
         self.usuario = ''
         self.contrasenia = ''
         rx.spinner
