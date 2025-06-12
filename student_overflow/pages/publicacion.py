@@ -21,9 +21,16 @@ class EstadoPublicacion(rx.State):
         self.descripcion = descripcion_ingresada
        
     @rx.event    
-    def publicar(self):
+    async def publicar(self):
+        estado_login = await self.get_state(EstadoLogin)
+        id_usuario = estado_login.id_usuario if estado_login else 0
+
+        print(f"DEBUG publicar - id_usuario: {id_usuario}")
+
+        if not id_usuario:
+            EstadoLogin.error_msg = "No estás logueado"
+            return
         with rx.session() as canal:
-            id_usuario = EstadoLogin.get_id_usuario_()
             canal.add(
             Publicacion(
                 titulo=self.titulo,
@@ -104,10 +111,9 @@ def publicacion() -> rx.Component:
                             spacing="2",
                             width="100%",
                         ),
-                        rx.button("Publicar", size="3", width="100%", color_scheme='lime'),
+                        rx.button("Publicar", size="3", width="100%", color_scheme='lime', on_click=EstadoPublicacion.publicar),
                         spacing="6",
                         width="100%",
-                        on_click=EstadoPublicacion.publicar,
                     ),
                 size="5",
                 max_width="50em",

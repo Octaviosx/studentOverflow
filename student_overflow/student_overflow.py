@@ -36,7 +36,14 @@ def index() -> rx.Component:
             rx.text(
                 "Comparte tus dudas de desarrollo e informática y la comunidad te dará una mano.",
                 size="5",
-                padding_bottom='6em'
+            ),
+            rx.button(
+                "Haznos saber tu duda...",
+                padding_buttom='6em',
+                size="3", 
+                idth="100%", 
+                color_scheme='lime',
+                on_click=rx.redirect('/publicacion')
             ),
             rx.separator(),
             rx.text(rx.text.strong("Podrás encontrar soluciónes para cualquier:"), size="6"),

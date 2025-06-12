@@ -12,7 +12,7 @@ class EstadoLogin(rx.State):
     usuario: str = ''
     contrasenia: str = ''
     error_msg: str = ''
-    id_usuario: int = None
+    id_usuario: int = 0
 
     @classmethod
     def get_id_usuario_(cls) -> int:
