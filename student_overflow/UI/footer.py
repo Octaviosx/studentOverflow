@@ -52,4 +52,9 @@ def footer() -> rx.Component:
             width="100%",
         ),
         width="100%",
+        background_color="var(--gray-2)",
+        position="fixed",
+        bottom="0",
+        left="0",  
+        z_index="1000", 
     )

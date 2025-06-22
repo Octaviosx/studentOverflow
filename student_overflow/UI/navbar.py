@@ -8,6 +8,9 @@ class Redirecciones():
 
     def mandarRegistro():
         return rx.redirect('/registro')
+    
+    def mandarPublicaciones():
+        return rx.redirect('/publicaciones')
 
 class MoverMouse(rx.State):
     variant = "outline"
@@ -37,11 +40,12 @@ def navbar_searchbar() -> rx.Component:
                     padding_top='5px',
                 ),                
                 rx.link(
-                    "Contacto",
+                    "Publicaciones",
                     href="#",
                     size="3",
                     padding_top='5px',
-                    color_scheme='lime'
+                    color_scheme='lime',
+                    on_click=Redirecciones.mandarPublicaciones
                 ),                
                 rx.input(
                     rx.input.slot(rx.icon("search")),
@@ -72,12 +76,11 @@ def navbar_searchbar() -> rx.Component:
             justify="between",
             align_items="end",
         ),
-        has_background='Bool',
-        accent_color="teal",
-        panel_background='solid',
+        background_color="var(--gray-2)",
+        box_shadow='md',
         width="100%",       # Asegura que el navbar ocupe todo el ancho
         padding="1.3rem",
-        position="sticky",
+        position="fixed",
         top="0",
         z_index="1000",       
     )
@@ -106,11 +109,12 @@ def navbar_search_user() -> rx.Component:
                     color_scheme='lime'
                 ),                
                 rx.link(
-                    "Contacto",
+                    "Publicaciones",
                     href="#",
                     size="3",
                     padding_top='5px',
-                    color_scheme='lime'
+                    color_scheme='lime',
+                    on_click=Redirecciones.mandarPublicaciones
                 ),                  
                 rx.input(
                     rx.input.slot(rx.icon("search")),
@@ -145,9 +149,11 @@ def navbar_search_user() -> rx.Component:
             justify="between",
             align_items="end",
         ),
+        background_color="var(--gray-2)",
+        box_shadow='md',
         width="100%",       # Asegura que el navbar ocupe todo el ancho
         padding="1.3rem",
-        position="sticky",
+        position="fixed",
         top="0",
         z_index="1000",       
     )

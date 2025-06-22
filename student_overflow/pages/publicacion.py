@@ -1,130 +1,67 @@
 import reflex as rx
 from rxconfig import config
-import sqlalchemy
+import bcrypt
+from typing import List, Dict, Any
+from sqlalchemy import text
 from ..pages.login import EstadoLogin
-from ..UI.navbar import navbar_searchbar, navbar_search_user
-from ..UI.footer import footer
+from ..models.usuario import Usuario
 from ..models.tb_publicacion import Publicacion
-import datetime as dt
+from ..UI.navbar import navbar_searchbar, navbar_search_user
+from ..UI.logo import logo
+from ..UI.footer import footer
 
-
-class EstadoPublicacion(rx.State):
-    titulo: str = ''
-    descripcion: str = ''
-
+class EstadoPublicaciones(rx.State):
+    publicacionesList: List[dict] = []
     @rx.event
-    def asignarTitulo(self, titulo_ingresado):
-        self.titulo = titulo_ingresado
-    
-    @rx.event       
-    def asignarDescripcion(self, descripcion_ingresada):
-        self.descripcion = descripcion_ingresada
-       
-    @rx.event    
-    async def publicar(self):
-        estado_login = await self.get_state(EstadoLogin)
-        # Si estado_login no es None, entonces usa estado_login.id_usuario.
-        # Si estado_login es None (por ejemplo, no hay estado de sesión cargado), entonces asigna 0.
-        id_usuario = estado_login.id_usuario if estado_login else 0
+    def cargar_publicaciones(self):
+        with rx.session() as session:
+            stmt = text("""
+            SELECT 
+                p.id_publicacion, 
+                p.titulo, 
+                p.descripcion, 
+                p.fecha, 
+                u.id_usuario,
+                u.username AS nombre_usuario
+            FROM 
+                publicacion p
+            JOIN 
+                usuario u ON p.id_usuario = u.id_usuario
+            ORDER BY 
+                p.fecha DESC
+            LIMIT 5;
+        """)
+            resultado = session.exec(stmt)
+            self.publicacionesList = [dict(r._mapping) for r in resultado]
+        
+        #print("Datos cargados:", EstadoPublicaciones.publicacionesList)   
 
-        if not id_usuario:
-            EstadoLogin.error_msg = "No estás logueado"
-            return
-        with rx.session() as canal:
-            canal.add(
-            Publicacion(
-                titulo=self.titulo,
-                descripcion=self.descripcion,
-                fecha=dt.date.today(),
-                id_usuario = id_usuario,
-                )
-            )
-            canal.commit()
-            self.titulo = ''
-            self.descripcion = ''
-        return rx.redirect('/')
-
-@rx.page(route='/publicacion', title='Publicacion')
+@rx.page(route='/publicacion', title='publicaciones')
 def publicacion() -> rx.Component:
     def navbar_condicional():
         return rx.cond(
             EstadoLogin.id_usuario != 0,
             navbar_search_user(),
             navbar_searchbar()
-    )
+        )
     return rx.vstack(
         navbar_condicional(),
-        rx.vstack(
-            rx.center(
-                rx.card(
-                    rx.vstack(
-                        rx.center(
-                            rx.heading(
-                                "Formula una pregunta",
-                                size="6",
-                                as_="h2",
-                                text_align="left",
-                                width="100%",
-                            ),
-                            direction="column",
-                            spacing="5",
-                            width="100%",
-                        ),
-                        rx.vstack(
-                            rx.text(
-                                "Titulo",
-                                size="3",
-                                weight="medium",
-                                text_align="left",
-                                width="100%",
-                            ),
-                            rx.input(
-                                placeholder="Error en cadena de conexión...",
-                                type="text",
-                                size="3",
-                                width="100%",
-                                value=EstadoPublicacion.titulo,
-                                on_change=EstadoPublicacion.asignarTitulo
-                            ),
-                            justify="start",
-                            spacing="2",
-                            width="100%",
-                        ),
-                        rx.vstack(
-                            rx.hstack(
-                                rx.text(
-                                    "Descripción",
-                                    size="3",
-                                    weight="medium",
-                                ),
-                                justify="between",
-                                width="100%",
-                            ),
-                            rx.text_area(
-                                placeholder="Escribe tu duda o error para ayudarte",
-                                type="text",
-                                size="3",
-                                width="100%",
-                                value=EstadoPublicacion.descripcion,
-                                on_change=EstadoPublicacion.asignarDescripcion
-                            ),
-                            spacing="2",
-                            width="100%",
-                        ),
-                        rx.button("Publicar", size="3", width="100%", color_scheme='lime', on_click=EstadoPublicacion.publicar),
-                        spacing="6",
-                        width="100%",
-                    ),
-                size="5",
-                max_width="50em",
-                width="1000px",
+        rx.box(height="6em", z_index="1000",padding_bottom='5em'),
+        rx.center(
+            rx.box(
+                rx.vstack(
+                    rx.text('empecemos')
+                    
                 ),
-            
-            padding_top='18vh',
-            padding_bottom='18vh',
-            padding_left='50vh',
-            align_items='center'
-            ),        
+                position="sticky",
+                #top="0",
+                left="0",
+                width="100%",
+                box_shadow="md",
+            ),
+            max_width="1200px",
+            width="100%",
+            margin="auto",
         ),
-        footer()      
+        footer(),
     )

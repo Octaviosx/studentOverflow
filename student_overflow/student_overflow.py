@@ -4,6 +4,8 @@ import reflex as rx
 from rxconfig import config
 from .pages.login import login, EstadoLogin
 from .pages.signup import registro
+from .pages.publicacionesAll import publicaciones
+from .pages.publicar import publicar
 from .pages.publicacion import publicacion
 from .UI.navbar import navbar_searchbar, navbar_search_user
 from .UI.footer import footer
@@ -39,11 +41,10 @@ def index() -> rx.Component:
             ),
             rx.button(
                 "Haznos saber tu duda...",
-                padding_buttom='6em',
                 size="3", 
                 idth="100%", 
                 color_scheme='lime',
-                on_click=rx.redirect('/publicacion')
+                on_click=rx.redirect('/publicar')
             ),
             rx.separator(),
             rx.text(rx.text.strong("Podrás encontrar soluciónes para cualquier:"), size="6"),
@@ -72,6 +73,8 @@ def index() -> rx.Component:
                     rx.card(rx.image(src=rx.asset("alibaba-logo.png")), width="100%"),
                 columns="4",
                 spacing="9",
+                padding_left='15em',
+                padding_right='15em',
                 width="100%",
                 ),
                 align='center'
@@ -82,8 +85,10 @@ def index() -> rx.Component:
             align='center',
             justify="center",
             min_height="70vh",
+            padding_top='2em',
             padding_left='17em',
             padding_right='17em',
+            padding_bottom='5em',
         ),
         footer()
     )
@@ -98,4 +103,6 @@ app = rx.App(style=style)
 app.add_page(index)
 app.add_page(login)
 app.add_page(registro)
+app.add_page(publicar)
 app.add_page(publicacion)
+app.add_page(publicaciones)

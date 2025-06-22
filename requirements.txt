@@ -1,2 +1,4 @@
-
+sqlalchemy
 reflex==0.7.13
+bcrypt
+typing
