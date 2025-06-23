@@ -1,5 +1,5 @@
 from rxconfig import config
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import declarative_base, relationship
 from sqlalchemy import String, Integer, VARCHAR, Text, Date
 from sqlalchemy.orm import declarative_base, mapped_column, Mapped
 
@@ -12,3 +12,5 @@ class Publicacion(Base):
     descripcion: Mapped[str] = mapped_column(Text, unique=True, nullable=False)
     fecha: Mapped[str] = mapped_column(Date, nullable=False)
     id_usuario: Mapped[int] = mapped_column(Integer, nullable=False)
+    usuario = relationship("Usuario", back_populates="publicaciones")
+    

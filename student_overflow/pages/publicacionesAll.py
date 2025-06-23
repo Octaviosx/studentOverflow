@@ -81,7 +81,7 @@ def publicaciones() -> rx.Component:
                     rx.foreach(
                         EstadoPublicaciones.publicacionesList,  # sin paréntesis ✅
                         lambda pub: rx.card(
-                            rx.heading(pub["titulo"], size="4"),
+                            rx.heading(pub["titulo"], size="4", on_click=rx.redirect(f'/publicacion/{pub["id_publicacion"]}'),cursor="pointer", ),
                             rx.text(pub["descripcion"], padding_bottom='1em'),
                             rx.text(f'Fecha: {pub["fecha"]}  Autor: {pub["nombre_usuario"]}', size="2", color="gray", align='right'),
                             #rx.text(f'Autor: {pub["nombre_usuario"]}', size="1", color="lime"),

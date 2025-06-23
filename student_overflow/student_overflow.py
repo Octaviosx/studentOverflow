@@ -1,5 +1,4 @@
 """Welcome to Reflex! This file outlines the steps to create a basic app."""
-
 import reflex as rx
 from rxconfig import config
 from .pages.login import login, EstadoLogin
@@ -104,5 +103,5 @@ app.add_page(index)
 app.add_page(login)
 app.add_page(registro)
 app.add_page(publicar)
-app.add_page(publicacion)
+app.add_page(publicacion, route="/publicacion/[id_publicacion]")
 app.add_page(publicaciones)
